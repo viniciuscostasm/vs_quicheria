@@ -46,10 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Code\DAL\CategoriaInformation.cs" />
-    <Compile Include="Code\DAL\ClienteInformation.cs" />
-    <Compile Include="Code\DAL\ProdutoInformation.cs" />
-    <Compile Include="Code\DAL\VendaInformation.cs" />
     <Compile Include="frmAlterarSenha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,8 +252,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Code\BLL\" />
-    <Folder Include="Code\DTO\" />
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{bafc05ef-f07b-452a-b07f-b9f3c5dcc441}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{b1f5b294-fae4-473d-9101-f710775857e5}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelos\Modelos.csproj">
+      <Project>{f3881021-a022-4491-a874-5af6b3c41a6e}</Project>
+      <Name>Modelos</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\oie_transparent %284%29.png" />

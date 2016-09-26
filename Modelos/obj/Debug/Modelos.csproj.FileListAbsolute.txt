@@ -1,0 +1,5 @@
+C:\Users\bella\Source\Repos\vs_quicheria\Modelos\obj\Debug\Modelos.csprojResolveAssemblyReference.cache
+C:\Users\bella\Source\Repos\vs_quicheria\Modelos\bin\Debug\Modelos.dll
+C:\Users\bella\Source\Repos\vs_quicheria\Modelos\bin\Debug\Modelos.pdb
+C:\Users\bella\Source\Repos\vs_quicheria\Modelos\obj\Debug\Modelos.dll
+C:\Users\bella\Source\Repos\vs_quicheria\Modelos\obj\Debug\Modelos.pdb
