@@ -53,3 +53,6 @@ C:\Users\bella\Source\Repos\vs_quicheria\SystemQuiche\obj\Debug\SystemQuiche.frm
 C:\Users\bella\Source\Repos\vs_quicheria\SystemQuiche\obj\Debug\SystemQuiche.MDIPrincipal.resources
 C:\Users\bella\Source\Repos\vs_quicheria\SystemQuiche\obj\Debug\SystemQuiche.Properties.Resources.resources
 C:\Users\bella\Source\Repos\vs_quicheria\SystemQuiche\obj\Debug\SystemQuiche.csproj.GenerateResource.Cache
+C:\Users\ilaia\OneDrive\Documentos\GitHub\Quiche\SystemQuiche\bin\Debug\SystemQuiche.exe.config
+C:\Users\ilaia\OneDrive\Documentos\GitHub\Quiche\SystemQuiche\obj\Debug\SystemQuiche.exe
+C:\Users\ilaia\OneDrive\Documentos\GitHub\Quiche\SystemQuiche\obj\Debug\SystemQuiche.pdb
