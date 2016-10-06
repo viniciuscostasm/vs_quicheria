@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BAFC05EF-F07B-452A-B07F-B9F3C5DCC441}</ProjectGuid>
+    <ProjectGuid>{E1CDE789-1064-4AD7-9659-DAA2FCB80887}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BLL</RootNamespace>
@@ -40,19 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomerBLL.cs" />
+    <Compile Include="CategoryBLL.cs" />
     <Compile Include="ProductBLL.cs" />
-    <Compile Include="ProductSoldBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{b1f5b294-fae4-473d-9101-f710775857e5}</Project>
+      <Project>{fe40dce6-6d66-4398-86fd-2fb5b9ea60f4}</Project>
       <Name>DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Modelos\Modelos.csproj">
-      <Project>{f3881021-a022-4491-a874-5af6b3c41a6e}</Project>
-      <Name>Modelos</Name>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{076c9008-950b-4d8c-9ac7-473ad81b4544}</Project>
+      <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

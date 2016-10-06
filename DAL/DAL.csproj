@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B1F5B294-FAE4-473D-9101-F710775857E5}</ProjectGuid>
+    <ProjectGuid>{FE40DCE6-6D66-4398-86FD-2FB5B9EA60F4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DAL</RootNamespace>
@@ -30,8 +30,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,18 +51,59 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CategoryDAL.cs" />
-    <Compile Include="CustomerDAL.cs" />
-    <Compile Include="Dados.cs" />
-    <Compile Include="ProductDAL.cs" />
-    <Compile Include="ProductSoldDAL.cs" />
+    <Compile Include="CategoryRepositorio.cs" />
+    <Compile Include="CustomerRepositorio.cs" />
+    <Compile Include="ICategoryRepositorio.cs" />
+    <Compile Include="ICustomerRepositorio.cs" />
+    <Compile Include="IInvoice_InfoRepositorio.cs" />
+    <Compile Include="Invoice_InfoRepositorio.cs" />
+    <Compile Include="IProductRepositorio.cs" />
+    <Compile Include="IProductSoldRepositorio.cs" />
+    <Compile Include="IRegistrationRepositorio.cs" />
+    <Compile Include="IRepositorio.cs" />
+    <Compile Include="ProductRepositorio.cs" />
+    <Compile Include="ProductSoldRepositorio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegistrationDAL.cs" />
+    <Compile Include="RegistrationRepositorio.cs" />
+    <Compile Include="Repositorio.cs" />
+    <Compile Include="RMS_DB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RMS_DB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RMS_DB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RMS_DB.edmx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Modelos\Modelos.csproj">
-      <Project>{f3881021-a022-4491-a874-5af6b3c41a6e}</Project>
-      <Name>Modelos</Name>
+    <EntityDeploy Include="RMS_DB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RMS_DB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="RMS_DB.edmx.diagram">
+      <DependentUpon>RMS_DB.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RMS_DB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RMS_DB.edmx</DependentUpon>
+      <LastGenOutput>RMS_DB.Context.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{076c9008-950b-4d8c-9ac7-473ad81b4544}</Project>
+      <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

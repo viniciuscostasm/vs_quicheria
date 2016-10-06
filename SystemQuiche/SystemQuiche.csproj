@@ -210,9 +210,6 @@
     <EmbeddedResource Include="frmRegistroUsuariosDetalhes.resx">
       <DependentUpon>frmRegistroUsuariosDetalhes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSobre.resx">
-      <DependentUpon>frmSobre.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmSplash.resx">
       <DependentUpon>frmSplash.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,16 +250,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{bafc05ef-f07b-452a-b07f-b9f3c5dcc441}</Project>
+      <Project>{e1cde789-1064-4ad7-9659-daa2fcb80887}</Project>
       <Name>BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{b1f5b294-fae4-473d-9101-f710775857e5}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Modelos\Modelos.csproj">
-      <Project>{f3881021-a022-4491-a874-5af6b3c41a6e}</Project>
-      <Name>Modelos</Name>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{076c9008-950b-4d8c-9ac7-473ad81b4544}</Project>
+      <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

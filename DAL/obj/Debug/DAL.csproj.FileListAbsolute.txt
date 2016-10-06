@@ -1,7 +1,12 @@
-C:\Users\bella\Source\Repos\vs_quicheria\DAL\bin\Debug\DAL.dll
-C:\Users\bella\Source\Repos\vs_quicheria\DAL\bin\Debug\DAL.pdb
-C:\Users\bella\Source\Repos\vs_quicheria\DAL\bin\Debug\Modelos.dll
-C:\Users\bella\Source\Repos\vs_quicheria\DAL\bin\Debug\Modelos.pdb
-C:\Users\bella\Source\Repos\vs_quicheria\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-C:\Users\bella\Source\Repos\vs_quicheria\DAL\obj\Debug\DAL.dll
-C:\Users\bella\Source\Repos\vs_quicheria\DAL\obj\Debug\DAL.pdb
+C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\DAL\bin\Debug\DAL.dll.config
+C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\DAL\bin\Debug\DAL.dll
+C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\DAL\bin\Debug\DAL.pdb
+C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\DAL\bin\Debug\EntityFramework.dll
+C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\DAL\bin\Debug\Model.dll
+C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\DAL\bin\Debug\Model.pdb
+C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\DAL\bin\Debug\EntityFramework.xml
+C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\DAL\obj\Debug\DAL.dll
+C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\DAL\obj\Debug\DAL.pdb

@@ -3,59 +3,67 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
-using System.Collections;
-using SystemQuiche.Modelos;
-using SystemQuiche.DAL;
+using Model;
+using DAL;
 
-namespace SystemQuiche.BLL
+namespace BLL
 {
+
+    // Na classe ProductBLL implementei método para realizar as operações CRUD 
+    // e selecionar dados usando o Repositorio criado na camada DAL. 
+    // Eu não implementei um tratamento de exceção nesta classe, farei isso na classe CategoryBLL.
+
     public class ProductBLL
     {
-                
-        public void Incluir(ProductInformation produto)
+        IProductRepositorio _productRepositorio;
+
+        public ProductBLL()
         {
-            //Nome do produto é obrigatorio
-            if(produto.ProductName.Trim().Length == 0)
-            {
-                throw new Exception("O nome do produto é obrigatorio.");
-            }
-
-            //O preço do produto não pode ser negativo
-            if(produto.Price < 0)
-            {
-                throw new Exception("O preço do produto não pode ser negativo");
-            }
-
-            // Se tudo estiver OK, chama a rotina de gravação
-
-            ProductDAL obj = new ProductDAL();
-            obj.Incluir(produto);
+            //cria uma instância do repositorio Produto
+            _productRepositorio = new ProductRepositorio();
         }
 
-        public void Alterar(ProductInformation produto)
+        public List<Product> GetProdutosPorCategoria(int categoryID)
         {
-            //Nome do produto é obrigatorio
-            if (produto.ProductName.Trim().Length == 0)
-            {
-                throw new Exception("O nome do produto é obrigatorio.");
-            }
-
-            //Preço do produto não pode ser negativo
-            if(produto.Price < 0)
-            {
-                throw new Exception("O preço do produto não pode ser negativo.");
-            }
-
-            //Se tudo estiver OK, chama a rotina de alteração
-            ProductDAL obj = new ProductDAL();
-            obj.Alterar(produto);
+            return _productRepositorio.Get(e => e.CategoryID == categoryID).ToList();
         }
 
-        public void Excluir(int ProductID)
+        public List<Product> Get_CategoriaInfo(int ProductID = -1)
         {
-            ProductDAL obj = new ProductDAL();
-            obj.Excluir(ProductID);
+            if (ProductID == -1)
+            {
+                //retorna todos os produtos
+                return _productRepositorio.GetTodos().ToList();
+            }
+            else
+            {
+                //retorna um determinado produto pelo seu ID
+                return _productRepositorio.Get(p => p.ProductID == ProductID).ToList();
+            }
+        }
+
+        public void AdicionarProduto(Product prod)
+        {
+            _productRepositorio.Adicionar(prod);
+            _productRepositorio.Commit();
+        }
+
+        public Product Localizar(int id)
+        {
+            return _productRepositorio.Find(id);
+        }
+
+        public void ExcluirProduto(Product prod)
+        {
+            _productRepositorio.Deletar(c => c == prod);
+            _productRepositorio.Commit();           
+        }
+
+        public void AlterarProduto(Product prod)
+        {
+            _productRepositorio.Atualizar(prod);
+            _productRepositorio.Commit();
         }
     }
 }
+
