@@ -60,3 +60,4 @@ C:\Users\bella\Source\Repos\vs_quicheria\SystemQuiche\obj\Debug\SystemQuiche.frm
 C:\Users\bella\Source\Repos\vs_quicheria\SystemQuiche\obj\Debug\SystemQuiche.MDIPrincipal.resources
 C:\Users\bella\Source\Repos\vs_quicheria\SystemQuiche\obj\Debug\SystemQuiche.Properties.Resources.resources
 C:\Users\bella\Source\Repos\vs_quicheria\SystemQuiche\obj\Debug\SystemQuiche.csproj.GenerateResource.Cache
+C:\Users\bella\Source\Repos\vs_quicheria\SystemQuiche\obj\Debug\SystemQuiche.frmSobre.resources

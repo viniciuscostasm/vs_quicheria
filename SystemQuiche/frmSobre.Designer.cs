@@ -27,7 +27,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSobre));
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.labelProductName = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
@@ -135,12 +134,13 @@
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 24;
-            this.okButton.Text = "&OK";
+            this.okButton.Text = "&Fechar";
+            this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // logoPictureBox
             // 
             this.logoPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("logoPictureBox.Image")));
+            this.logoPictureBox.Image = global::SystemQuiche.Properties.Resources.bellasQuicheria;
             this.logoPictureBox.Location = new System.Drawing.Point(3, 3);
             this.logoPictureBox.Name = "logoPictureBox";
             this.tableLayoutPanel.SetRowSpan(this.logoPictureBox, 6);
