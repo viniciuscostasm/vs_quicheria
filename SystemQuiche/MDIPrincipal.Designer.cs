@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDIPrincipal));
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
@@ -89,21 +90,24 @@
             // 
             // lblUsuario
             // 
-            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Image = ((System.Drawing.Image)(resources.GetObject("lblUsuario.Image")));
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(127, 17);
+            this.lblUsuario.Size = new System.Drawing.Size(140, 17);
             this.lblUsuario.Text = "toolStripStatusLabel1";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(517, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(451, 17);
             this.toolStripStatusLabel1.Spring = true;
             // 
             // toolStripStatusLabel2
             // 
+            this.toolStripStatusLabel2.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusLabel2.Image")));
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(140, 17);
             this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
             // 
             // menuStrip1
@@ -186,6 +190,12 @@
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.sairToolStripMenuItem.ToolTipText = "Sair do Sistema";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // menuStrip2
             // 
@@ -214,6 +224,7 @@
             // 
             // categoriaToolStripMenuItem1
             // 
+            this.categoriaToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("categoriaToolStripMenuItem1.Image")));
             this.categoriaToolStripMenuItem1.Name = "categoriaToolStripMenuItem1";
             this.categoriaToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
             this.categoriaToolStripMenuItem1.Size = new System.Drawing.Size(163, 22);
@@ -222,6 +233,7 @@
             // 
             // produtoToolStripMenuItem
             // 
+            this.produtoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("produtoToolStripMenuItem.Image")));
             this.produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
             this.produtoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.P)));
             this.produtoToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
@@ -239,6 +251,7 @@
             // 
             // registroToolStripMenuItem1
             // 
+            this.registroToolStripMenuItem1.Image = global::SystemQuiche.Properties.Resources.add_user_icon;
             this.registroToolStripMenuItem1.Name = "registroToolStripMenuItem1";
             this.registroToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.R)));
             this.registroToolStripMenuItem1.Size = new System.Drawing.Size(196, 22);
@@ -312,6 +325,7 @@
             // 
             // calculadoraToolStripMenuItem1
             // 
+            this.calculadoraToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("calculadoraToolStripMenuItem1.Image")));
             this.calculadoraToolStripMenuItem1.Name = "calculadoraToolStripMenuItem1";
             this.calculadoraToolStripMenuItem1.Size = new System.Drawing.Size(187, 22);
             this.calculadoraToolStripMenuItem1.Text = "Calculadora";
@@ -319,6 +333,7 @@
             // 
             // gereciadorDeTarefasToolStripMenuItem
             // 
+            this.gereciadorDeTarefasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("gereciadorDeTarefasToolStripMenuItem.Image")));
             this.gereciadorDeTarefasToolStripMenuItem.Name = "gereciadorDeTarefasToolStripMenuItem";
             this.gereciadorDeTarefasToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.gereciadorDeTarefasToolStripMenuItem.Text = "Gereciador de Tarefas";
@@ -326,6 +341,7 @@
             // 
             // mSWordToolStripMenuItem1
             // 
+            this.mSWordToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("mSWordToolStripMenuItem1.Image")));
             this.mSWordToolStripMenuItem1.Name = "mSWordToolStripMenuItem1";
             this.mSWordToolStripMenuItem1.Size = new System.Drawing.Size(187, 22);
             this.mSWordToolStripMenuItem1.Text = "MS Word";
@@ -333,6 +349,7 @@
             // 
             // notepadToolStripMenuItem1
             // 
+            this.notepadToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("notepadToolStripMenuItem1.Image")));
             this.notepadToolStripMenuItem1.Name = "notepadToolStripMenuItem1";
             this.notepadToolStripMenuItem1.Size = new System.Drawing.Size(187, 22);
             this.notepadToolStripMenuItem1.Text = "Notepad";
@@ -340,6 +357,7 @@
             // 
             // wordpadToolStripMenuItem1
             // 
+            this.wordpadToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("wordpadToolStripMenuItem1.Image")));
             this.wordpadToolStripMenuItem1.Name = "wordpadToolStripMenuItem1";
             this.wordpadToolStripMenuItem1.Size = new System.Drawing.Size(187, 22);
             this.wordpadToolStripMenuItem1.Text = "Wordpad";
@@ -368,6 +386,7 @@
             this.Name = "MDIPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bella\'s Quicheria - Menu Principal";
+            this.Load += new System.EventHandler(this.MDIPrincipal_Load);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

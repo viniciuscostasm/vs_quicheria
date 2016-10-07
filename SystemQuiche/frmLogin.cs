@@ -40,6 +40,25 @@ namespace SystemQuiche
         {
             this.Dispose();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            frmAlterarSenha frm = new frmAlterarSenha();
+            frm.Show();
+            frm.txtNomeUsuario.Text = "";
+            frm.txtNovaSenha.Text = "";
+            frm.txtOldSenha.Text = "";
+            frm.txtConfirmaSenha.Text = "";
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            frmRecuperarSenha frm = new frmRecuperarSenha();
+            frm.txtEmail.Focus();
+            frm.Show();
+        }
     }
 }
 

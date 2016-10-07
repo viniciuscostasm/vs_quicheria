@@ -31,26 +31,26 @@
             this.txtCategoriaID = new System.Windows.Forms.TextBox();
             this.txtProdutoID = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtNomeProduto = new System.Windows.Forms.TextBox();
-            this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.txtPreco = new System.Windows.Forms.TextBox();
+            this.cmbCategoria = new System.Windows.Forms.ComboBox();
+            this.txtNomeProduto = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtProcurarProduto = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnNovo = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnDeletar = new System.Windows.Forms.Button();
             this.btnAtualizar = new System.Windows.Forms.Button();
+            this.btnDeletar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -87,23 +87,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Produto Info";
             // 
-            // label1
+            // txtPreco
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nome do Produto";
+            this.txtPreco.Location = new System.Drawing.Point(166, 112);
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.Size = new System.Drawing.Size(151, 24);
+            this.txtPreco.TabIndex = 4;
             // 
-            // label2
+            // cmbCategoria
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 73);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Categoria";
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Location = new System.Drawing.Point(166, 70);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(297, 25);
+            this.cmbCategoria.TabIndex = 1;
+            // 
+            // txtNomeProduto
+            // 
+            this.txtNomeProduto.Location = new System.Drawing.Point(166, 31);
+            this.txtNomeProduto.Name = "txtNomeProduto";
+            this.txtNomeProduto.Size = new System.Drawing.Size(297, 24);
+            this.txtNomeProduto.TabIndex = 0;
             // 
             // label3
             // 
@@ -114,27 +118,23 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Preço";
             // 
-            // txtNomeProduto
+            // label2
             // 
-            this.txtNomeProduto.Location = new System.Drawing.Point(166, 31);
-            this.txtNomeProduto.Name = "txtNomeProduto";
-            this.txtNomeProduto.Size = new System.Drawing.Size(297, 24);
-            this.txtNomeProduto.TabIndex = 0;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(29, 73);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 17);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Categoria";
             // 
-            // cmbCategoria
+            // label1
             // 
-            this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(166, 70);
-            this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(297, 25);
-            this.cmbCategoria.TabIndex = 1;
-            // 
-            // txtPreco
-            // 
-            this.txtPreco.Location = new System.Drawing.Point(166, 112);
-            this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(151, 24);
-            this.txtPreco.TabIndex = 4;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(29, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 17);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Nome do Produto";
             // 
             // groupBox2
             // 
@@ -172,10 +172,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(625, 311);
             this.dataGridView1.TabIndex = 5;
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
             // Column1
             // 
             this.Column1.HeaderText = "ID";
@@ -209,6 +205,10 @@
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -221,25 +221,16 @@
             this.panel1.Size = new System.Drawing.Size(114, 175);
             this.panel1.TabIndex = 2;
             // 
-            // btnNovo
+            // btnAtualizar
             // 
-            this.btnNovo.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnNovo.Location = new System.Drawing.Point(13, 14);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(85, 32);
-            this.btnNovo.TabIndex = 0;
-            this.btnNovo.Text = "&Novo";
-            this.btnNovo.UseVisualStyleBackColor = true;
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnSalvar.Location = new System.Drawing.Point(13, 52);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(85, 32);
-            this.btnSalvar.TabIndex = 1;
-            this.btnSalvar.Text = "&Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Enabled = false;
+            this.btnAtualizar.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnAtualizar.Location = new System.Drawing.Point(13, 128);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(85, 32);
+            this.btnAtualizar.TabIndex = 3;
+            this.btnAtualizar.Text = "&Atualizar";
+            this.btnAtualizar.UseVisualStyleBackColor = true;
             // 
             // btnDeletar
             // 
@@ -252,16 +243,26 @@
             this.btnDeletar.Text = "&Deletar";
             this.btnDeletar.UseVisualStyleBackColor = true;
             // 
-            // btnAtualizar
+            // btnSalvar
             // 
-            this.btnAtualizar.Enabled = false;
-            this.btnAtualizar.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnAtualizar.Location = new System.Drawing.Point(13, 128);
-            this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(85, 32);
-            this.btnAtualizar.TabIndex = 3;
-            this.btnAtualizar.Text = "&Atualizar";
-            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnSalvar.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnSalvar.Location = new System.Drawing.Point(13, 52);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(85, 32);
+            this.btnSalvar.TabIndex = 1;
+            this.btnSalvar.Text = "&Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnNovo.Location = new System.Drawing.Point(13, 14);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(85, 32);
+            this.btnNovo.TabIndex = 0;
+            this.btnNovo.Text = "&Novo";
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // frmProdutos
             // 
@@ -284,6 +285,7 @@
             this.Name = "frmProdutos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Produto";
+            this.Load += new System.EventHandler(this.frmProdutos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
