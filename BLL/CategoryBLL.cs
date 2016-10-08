@@ -40,7 +40,7 @@ namespace BLL
                 else
                 {
                     //retorna uma determinada categoria pelo seu ID
-                    return _categoryRepositorio.Get(p => p.Id == ID).ToList();
+                    return _categoryRepositorio.Get(c => c.Id == ID).ToList();
                 }
             }
             catch (Exception ex)

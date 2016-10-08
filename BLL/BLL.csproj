@@ -41,8 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryBLL.cs" />
+    <Compile Include="CustomerBLL.cs" />
+    <Compile Include="Invoice_InfoBLL.cs" />
     <Compile Include="ProductBLL.cs" />
+    <Compile Include="ProductSoldBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrationBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

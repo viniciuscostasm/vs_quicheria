@@ -10,3 +10,14 @@ C:\Users\bella\Source\Repos\vs_quicheria\BLL\bin\Debug\EntityFramework.xml
 C:\Users\bella\Source\Repos\vs_quicheria\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 C:\Users\bella\Source\Repos\vs_quicheria\BLL\obj\Debug\BLL.dll
 C:\Users\bella\Source\Repos\vs_quicheria\BLL\obj\Debug\BLL.pdb
+C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\BLL\bin\Debug\BLL.dll
+C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\BLL\bin\Debug\BLL.pdb
+C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\BLL\bin\Debug\DAL.dll
+C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\BLL\bin\Debug\Model.dll
+C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\BLL\bin\Debug\EntityFramework.dll
+C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\BLL\bin\Debug\DAL.pdb
+C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\BLL\bin\Debug\Model.pdb
+C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\BLL\bin\Debug\EntityFramework.xml
+C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\BLL\obj\Debug\BLL.dll
+C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\BLL\obj\Debug\BLL.pdb
