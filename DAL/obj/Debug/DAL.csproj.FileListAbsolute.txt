@@ -34,3 +34,15 @@ C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\DAL\bin\Debug\EntityFrame
 C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\DAL\obj\Debug\DAL.dll
 C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\DAL\obj\Debug\DAL.pdb
+C:\Users\bella\Source\Repos\vs_quicheria2\DAL\bin\Debug\DAL.dll.config
+C:\Users\bella\Source\Repos\vs_quicheria2\DAL\bin\Debug\DAL.dll
+C:\Users\bella\Source\Repos\vs_quicheria2\DAL\bin\Debug\DAL.pdb
+C:\Users\bella\Source\Repos\vs_quicheria2\DAL\bin\Debug\EntityFramework.dll
+C:\Users\bella\Source\Repos\vs_quicheria2\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\bella\Source\Repos\vs_quicheria2\DAL\bin\Debug\Model.dll
+C:\Users\bella\Source\Repos\vs_quicheria2\DAL\bin\Debug\Model.pdb
+C:\Users\bella\Source\Repos\vs_quicheria2\DAL\bin\Debug\EntityFramework.xml
+C:\Users\bella\Source\Repos\vs_quicheria2\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\bella\Source\Repos\vs_quicheria2\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\bella\Source\Repos\vs_quicheria2\DAL\obj\Debug\DAL.dll
+C:\Users\bella\Source\Repos\vs_quicheria2\DAL\obj\Debug\DAL.pdb
