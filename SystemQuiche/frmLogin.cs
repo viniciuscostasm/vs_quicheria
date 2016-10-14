@@ -8,12 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using BLL;
+using Model;
+
 
 namespace SystemQuiche
 {
     public partial class frmLogin : Form
     {
-        
+
+        ConnectionString cs = new ConnectionString();
+        DataTable dt = new DataTable();
+
 
         public frmLogin()
         {
@@ -28,10 +34,85 @@ namespace SystemQuiche
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            
+            if (txtNomeUsuario.Text == "")
+            {
+                MessageBox.Show("Informe o  Usuário", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNomeUsuario.Focus();
+                return;
+            }
+            if (txtSenha.Text == "")
+            {
+                MessageBox.Show("Informe a senha", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSenha.Focus();
+                return;
+            }
+            try
+            {
+                SqlConnection myConnection = default(SqlConnection);
+                myConnection = new SqlConnection(cs.DBConn);
+
+                SqlCommand myCommand = default(SqlCommand);
+
+                myCommand = new SqlCommand("SELECT Username,password FROM Registration WHERE Username = @username AND password = @UserPassword", myConnection);
+                SqlParameter uName = new SqlParameter("@username", SqlDbType.VarChar);
+                SqlParameter uPassword = new SqlParameter("@UserPassword", SqlDbType.VarChar);
+                uName.Value = txtNomeUsuario.Text;
+                uPassword.Value = txtSenha.Text;
+                myCommand.Parameters.Add(uName);
+                myCommand.Parameters.Add(uPassword);
+
+                myCommand.Connection.Open();
+
+                SqlDataReader myReader = myCommand.ExecuteReader(CommandBehavior.CloseConnection);
+
+                if (myReader.Read() == true)
+                {
+                    int i;
+                    progressBar1.Visible = true;
+                    progressBar1.Maximum = 5000;
+                    progressBar1.Minimum = 0;
+                    progressBar1.Value = 4;
+                    progressBar1.Step = 1;
+
+                    for (i = 0; i <= 5000; i++)
+                    {
+                        progressBar1.PerformStep();
+                    }
+
+                    this.Hide();
+                    MDIPrincipal frm = new MDIPrincipal();
+                    frm.Show();
+                    frm.lblUsuario.Text = txtNomeUsuario.Text;
+
+                }
+
+
+                else
+                {
+                    MessageBox.Show("Login Falhou..Tente novamente !", "Login Negado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    txtNomeUsuario.Clear();
+                    txtSenha.Clear();
+                    txtNomeUsuario.Focus();
+
+                }
+                if (myConnection.State == ConnectionState.Open)
+                {
+                    myConnection.Dispose();
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void btnCancela_Click(object sender, EventArgs e)
+    
+
+    private void btnCancela_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }

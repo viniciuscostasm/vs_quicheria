@@ -16,7 +16,7 @@ namespace SystemQuiche
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MDIPrincipal());
+            Application.Run(new frmSplash());
         }
     }
 }
