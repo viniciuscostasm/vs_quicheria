@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FE40DCE6-6D66-4398-86FD-2FB5B9EA60F4}</ProjectGuid>
+    <ProjectGuid>{A86AABA8-2BC0-4249-9FF1-C14782764539}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DAL</RootNamespace>
@@ -51,6 +51,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cadastro.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cadastro.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cadastro.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroDataSet.Designer.cs">
+      <DependentUpon>CadastroDataSet.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="CategoryRepositorio.cs" />
     <Compile Include="CustomerRepositorio.cs" />
     <Compile Include="ICategoryRepositorio.cs" />
@@ -66,35 +81,34 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistrationRepositorio.cs" />
     <Compile Include="Repositorio.cs" />
-    <Compile Include="RMS_DB.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RMS_DB.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RMS_DB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RMS_DB.edmx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="RMS_DB.edmx">
+    <None Include="App.config" />
+    <EntityDeploy Include="Cadastro.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>RMS_DB.Designer.cs</LastGenOutput>
+      <LastGenOutput>Cadastro.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
-    <None Include="packages.config" />
-    <None Include="RMS_DB.edmx.diagram">
-      <DependentUpon>RMS_DB.edmx</DependentUpon>
+    <None Include="Cadastro.edmx.diagram">
+      <DependentUpon>Cadastro.edmx</DependentUpon>
     </None>
+    <None Include="CadastroDataSet.xsc">
+      <DependentUpon>CadastroDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CadastroDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CadastroDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CadastroDataSet.xss">
+      <DependentUpon>CadastroDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="RMS_DB.Context.tt">
+    <Content Include="Cadastro.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>RMS_DB.edmx</DependentUpon>
-      <LastGenOutput>RMS_DB.Context.cs</LastGenOutput>
+      <DependentUpon>Cadastro.edmx</DependentUpon>
+      <LastGenOutput>Cadastro.Context.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
@@ -102,7 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{076c9008-950b-4d8c-9ac7-473ad81b4544}</Project>
+      <Project>{5eb5ab4a-f99e-4ed6-a7aa-2997a72c675e}</Project>
       <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>

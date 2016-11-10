@@ -112,6 +112,7 @@
             this.btnDeletar.TabIndex = 2;
             this.btnDeletar.Text = "&Deletar";
             this.btnDeletar.UseVisualStyleBackColor = true;
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
             // btnSalvar
             // 
@@ -121,6 +122,7 @@
             this.btnSalvar.TabIndex = 1;
             this.btnSalvar.Text = "&Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnNovo
             // 

@@ -13,10 +13,10 @@ namespace DAL
          * e criando uma nova instância do contexto. Tudo depende do contexto e vamos usar sua 
          * referência em todos os métodos para acessar as entidades no Entity Data Model. */
 
-        private RMS_DBEntities Context;
+        private CadastroEntities Context;
         protected Repositorio()
         {
-            Context = new RMS_DBEntities();
+            Context = new CadastroEntities();
         }
 
         /* O método GetTodos() recebe uma entidade (uma classe) e retorna um IQueryable,  

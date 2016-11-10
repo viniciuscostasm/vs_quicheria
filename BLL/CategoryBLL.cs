@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL;
 using Model;
+using DAL;
 
 namespace BLL
 {
@@ -15,20 +15,21 @@ namespace BLL
     public class CategoryBLL
     {
         ICategoryRepositorio _categoryRepositorio;
-
+        Category cat;
         public CategoryBLL()
         {
             try
             {
                 //cria uma instância do repositorio categoria
                 _categoryRepositorio = new CategoryRepositorio();
+                cat = new Category();
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        public List<Category> Get_CategoriaInfo(int ID = -1)
+        public List<Model.Category> Get_CategoriaInfo(int ID = -1)
         {
             try
             {
@@ -40,7 +41,7 @@ namespace BLL
                 else
                 {
                     //retorna uma determinada categoria pelo seu ID
-                    return _categoryRepositorio.Get(c => c.Id == ID).ToList();
+                    return _categoryRepositorio.Get(c => c.IdCategory == ID).ToList();
                 }
             }
             catch (Exception ex)
@@ -48,17 +49,21 @@ namespace BLL
                 throw ex;
             }
         }
-        public void AdicionarCategoria(Category cat)
+        public Boolean AdicionarCategoria(String nm)
         {
             try
             {
+                cat.CategoryName = nm;
                 _categoryRepositorio.Adicionar(cat);
                 _categoryRepositorio.Commit();
+                return true;
             }
             catch (Exception ex)
             {
                 throw ex;
+
             }
+            
         }
 
         public Category Localizar(int id)
@@ -73,11 +78,11 @@ namespace BLL
             }
         }
 
-        public void ExcluirCategoria(Category cat)
+        public void ExcluirCategoria(String nm)
         {
             try
             {
-                _categoryRepositorio.Deletar(c => c == cat);
+                _categoryRepositorio.Deletar(c => c.CategoryName == nm);
                 _categoryRepositorio.Commit();
             }
             catch (Exception ex)
@@ -86,7 +91,7 @@ namespace BLL
             }
         }
 
-        public void AlterarCategoria(Category cat)
+        public void AlterarCategoria(Model.Category cat)
         {
             try
             {

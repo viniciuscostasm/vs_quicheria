@@ -43,11 +43,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnNovoCadastro = new System.Windows.Forms.Button();
-            this.btnCadastrar = new System.Windows.Forms.Button();
-            this.btnDeletar = new System.Windows.Forms.Button();
-            this.btnAtualizarCadastro = new System.Windows.Forms.Button();
             this.btnObterDetalhes = new System.Windows.Forms.Button();
+            this.btnAtualizarCadastro = new System.Windows.Forms.Button();
+            this.btnDeletar = new System.Windows.Forms.Button();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.btnNovoCadastro = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -91,6 +91,9 @@
             this.cmbTipoUsuario.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbTipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoUsuario.FormattingEnabled = true;
+            this.cmbTipoUsuario.Items.AddRange(new object[] {
+            "Admin",
+            "User"});
             this.cmbTipoUsuario.Location = new System.Drawing.Point(139, 68);
             this.cmbTipoUsuario.Name = "cmbTipoUsuario";
             this.cmbTipoUsuario.Size = new System.Drawing.Size(172, 25);
@@ -200,37 +203,15 @@
             this.panel1.Size = new System.Drawing.Size(464, 61);
             this.panel1.TabIndex = 1;
             // 
-            // btnNovoCadastro
+            // btnObterDetalhes
             // 
-            this.btnNovoCadastro.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnNovoCadastro.Location = new System.Drawing.Point(13, 13);
-            this.btnNovoCadastro.Name = "btnNovoCadastro";
-            this.btnNovoCadastro.Size = new System.Drawing.Size(82, 31);
-            this.btnNovoCadastro.TabIndex = 0;
-            this.btnNovoCadastro.Text = "&Novo";
-            this.btnNovoCadastro.UseVisualStyleBackColor = true;
-            this.btnNovoCadastro.Click += new System.EventHandler(this.btnNovoCadastro_Click);
-            // 
-            // btnCadastrar
-            // 
-            this.btnCadastrar.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnCadastrar.Location = new System.Drawing.Point(101, 13);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(82, 31);
-            this.btnCadastrar.TabIndex = 1;
-            this.btnCadastrar.Text = "&Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
-            // 
-            // btnDeletar
-            // 
-            this.btnDeletar.Enabled = false;
-            this.btnDeletar.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnDeletar.Location = new System.Drawing.Point(190, 14);
-            this.btnDeletar.Name = "btnDeletar";
-            this.btnDeletar.Size = new System.Drawing.Size(82, 31);
-            this.btnDeletar.TabIndex = 2;
-            this.btnDeletar.Text = "&Deletar";
-            this.btnDeletar.UseVisualStyleBackColor = true;
+            this.btnObterDetalhes.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnObterDetalhes.Location = new System.Drawing.Point(365, 13);
+            this.btnObterDetalhes.Name = "btnObterDetalhes";
+            this.btnObterDetalhes.Size = new System.Drawing.Size(82, 31);
+            this.btnObterDetalhes.TabIndex = 4;
+            this.btnObterDetalhes.Text = "&Dados";
+            this.btnObterDetalhes.UseVisualStyleBackColor = true;
             // 
             // btnAtualizarCadastro
             // 
@@ -243,15 +224,37 @@
             this.btnAtualizarCadastro.Text = "&Atualizar";
             this.btnAtualizarCadastro.UseVisualStyleBackColor = true;
             // 
-            // btnObterDetalhes
+            // btnDeletar
             // 
-            this.btnObterDetalhes.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnObterDetalhes.Location = new System.Drawing.Point(365, 13);
-            this.btnObterDetalhes.Name = "btnObterDetalhes";
-            this.btnObterDetalhes.Size = new System.Drawing.Size(82, 31);
-            this.btnObterDetalhes.TabIndex = 4;
-            this.btnObterDetalhes.Text = "&Dados";
-            this.btnObterDetalhes.UseVisualStyleBackColor = true;
+            this.btnDeletar.Enabled = false;
+            this.btnDeletar.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnDeletar.Location = new System.Drawing.Point(190, 14);
+            this.btnDeletar.Name = "btnDeletar";
+            this.btnDeletar.Size = new System.Drawing.Size(82, 31);
+            this.btnDeletar.TabIndex = 2;
+            this.btnDeletar.Text = "&Deletar";
+            this.btnDeletar.UseVisualStyleBackColor = true;
+            // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnCadastrar.Location = new System.Drawing.Point(101, 13);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(82, 31);
+            this.btnCadastrar.TabIndex = 1;
+            this.btnCadastrar.Text = "&Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            // 
+            // btnNovoCadastro
+            // 
+            this.btnNovoCadastro.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnNovoCadastro.Location = new System.Drawing.Point(13, 13);
+            this.btnNovoCadastro.Name = "btnNovoCadastro";
+            this.btnNovoCadastro.Size = new System.Drawing.Size(82, 31);
+            this.btnNovoCadastro.TabIndex = 0;
+            this.btnNovoCadastro.Text = "&Novo";
+            this.btnNovoCadastro.UseVisualStyleBackColor = true;
+            this.btnNovoCadastro.Click += new System.EventHandler(this.btnNovoCadastro_Click);
             // 
             // frmCadastroUsuario
             // 

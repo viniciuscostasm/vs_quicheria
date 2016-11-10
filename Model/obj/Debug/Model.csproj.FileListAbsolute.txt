@@ -1,15 +1,18 @@
-C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\Model\bin\Debug\Model.dll
-C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\Model\bin\Debug\Model.pdb
-C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\Model\obj\Debug\Model.dll
-C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\Model\obj\Debug\Model.pdb
-C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
-C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\Model\bin\Debug\Model.dll
-C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\Model\bin\Debug\Model.pdb
-C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
-C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\Model\obj\Debug\Model.dll
-C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\Model\obj\Debug\Model.pdb
-C:\Users\bella\Source\Repos\vs_quicheria2\Model\bin\Debug\Model.dll
-C:\Users\bella\Source\Repos\vs_quicheria2\Model\bin\Debug\Model.pdb
-C:\Users\bella\Source\Repos\vs_quicheria2\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
-C:\Users\bella\Source\Repos\vs_quicheria2\Model\obj\Debug\Model.dll
-C:\Users\bella\Source\Repos\vs_quicheria2\Model\obj\Debug\Model.pdb
+c:\Users\ilaia\OneDrive\documentos\visual studio 2015\Projects\DAL\Model\bin\Debug\Model.dll
+c:\Users\ilaia\OneDrive\documentos\visual studio 2015\Projects\DAL\Model\bin\Debug\Model.pdb
+c:\Users\ilaia\OneDrive\documentos\visual studio 2015\Projects\DAL\Model\bin\Debug\EntityFramework.dll
+c:\Users\ilaia\OneDrive\documentos\visual studio 2015\Projects\DAL\Model\bin\Debug\EntityFramework.SqlServer.dll
+c:\Users\ilaia\OneDrive\documentos\visual studio 2015\Projects\DAL\Model\bin\Debug\EntityFramework.xml
+c:\Users\ilaia\OneDrive\documentos\visual studio 2015\Projects\DAL\Model\bin\Debug\EntityFramework.SqlServer.xml
+c:\Users\ilaia\OneDrive\documentos\visual studio 2015\Projects\DAL\Model\obj\Debug\Model.dll
+c:\Users\ilaia\OneDrive\documentos\visual studio 2015\Projects\DAL\Model\obj\Debug\Model.pdb
+C:\Users\ilaia\onedrive\documentos\visual studio 2015\Projects\DAL\Model\bin\Debug\Model.dll.config
+E:\Quicheria\Model\bin\Debug\Model.dll.config
+E:\Quicheria\Model\bin\Debug\Model.dll
+E:\Quicheria\Model\bin\Debug\Model.pdb
+E:\Quicheria\Model\bin\Debug\EntityFramework.dll
+E:\Quicheria\Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\Quicheria\Model\bin\Debug\EntityFramework.xml
+E:\Quicheria\Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\Quicheria\Model\obj\Debug\Model.dll
+E:\Quicheria\Model\obj\Debug\Model.pdb

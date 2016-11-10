@@ -1,48 +1,24 @@
-C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\DAL\bin\Debug\DAL.dll.config
-C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\DAL\bin\Debug\DAL.dll
-C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\DAL\bin\Debug\DAL.pdb
-C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\DAL\bin\Debug\EntityFramework.dll
-C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\DAL\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\DAL\bin\Debug\Model.dll
-C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\DAL\bin\Debug\Model.pdb
-C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\DAL\bin\Debug\EntityFramework.xml
-C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\DAL\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\DAL\obj\Debug\DAL.dll
-C:\Users\bella\Documents\Visual Studio 2015\Projects\SystemQuiche\DAL\obj\Debug\DAL.pdb
-C:\Users\bella\Source\Repos\vs_quicheria\DAL\bin\Debug\DAL.dll.config
-C:\Users\bella\Source\Repos\vs_quicheria\DAL\bin\Debug\DAL.dll
-C:\Users\bella\Source\Repos\vs_quicheria\DAL\bin\Debug\DAL.pdb
-C:\Users\bella\Source\Repos\vs_quicheria\DAL\bin\Debug\EntityFramework.dll
-C:\Users\bella\Source\Repos\vs_quicheria\DAL\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\bella\Source\Repos\vs_quicheria\DAL\bin\Debug\Model.dll
-C:\Users\bella\Source\Repos\vs_quicheria\DAL\bin\Debug\Model.pdb
-C:\Users\bella\Source\Repos\vs_quicheria\DAL\bin\Debug\EntityFramework.xml
-C:\Users\bella\Source\Repos\vs_quicheria\DAL\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\bella\Source\Repos\vs_quicheria\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-C:\Users\bella\Source\Repos\vs_quicheria\DAL\obj\Debug\DAL.dll
-C:\Users\bella\Source\Repos\vs_quicheria\DAL\obj\Debug\DAL.pdb
-C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\DAL\bin\Debug\DAL.dll.config
-C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\DAL\bin\Debug\DAL.dll
-C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\DAL\bin\Debug\DAL.pdb
-C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\DAL\bin\Debug\EntityFramework.dll
-C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\DAL\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\DAL\bin\Debug\Model.dll
-C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\DAL\bin\Debug\Model.pdb
-C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\DAL\bin\Debug\EntityFramework.xml
-C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\DAL\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\DAL\obj\Debug\DAL.dll
-C:\Users\ilaia\OneDrive\Documentos\GitHub\SystemQuiche\DAL\obj\Debug\DAL.pdb
-C:\Users\bella\Source\Repos\vs_quicheria2\DAL\bin\Debug\DAL.dll.config
-C:\Users\bella\Source\Repos\vs_quicheria2\DAL\bin\Debug\DAL.dll
-C:\Users\bella\Source\Repos\vs_quicheria2\DAL\bin\Debug\DAL.pdb
-C:\Users\bella\Source\Repos\vs_quicheria2\DAL\bin\Debug\EntityFramework.dll
-C:\Users\bella\Source\Repos\vs_quicheria2\DAL\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\bella\Source\Repos\vs_quicheria2\DAL\bin\Debug\Model.dll
-C:\Users\bella\Source\Repos\vs_quicheria2\DAL\bin\Debug\Model.pdb
-C:\Users\bella\Source\Repos\vs_quicheria2\DAL\bin\Debug\EntityFramework.xml
-C:\Users\bella\Source\Repos\vs_quicheria2\DAL\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\bella\Source\Repos\vs_quicheria2\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-C:\Users\bella\Source\Repos\vs_quicheria2\DAL\obj\Debug\DAL.dll
-C:\Users\bella\Source\Repos\vs_quicheria2\DAL\obj\Debug\DAL.pdb
+c:\Users\ilaia\OneDrive\documentos\visual studio 2015\Projects\DAL\DAL\bin\Debug\DAL.dll.config
+c:\Users\ilaia\OneDrive\documentos\visual studio 2015\Projects\DAL\DAL\bin\Debug\DAL.dll
+c:\Users\ilaia\OneDrive\documentos\visual studio 2015\Projects\DAL\DAL\bin\Debug\DAL.pdb
+c:\Users\ilaia\OneDrive\documentos\visual studio 2015\Projects\DAL\DAL\bin\Debug\EntityFramework.dll
+c:\Users\ilaia\OneDrive\documentos\visual studio 2015\Projects\DAL\DAL\bin\Debug\EntityFramework.SqlServer.dll
+c:\Users\ilaia\OneDrive\documentos\visual studio 2015\Projects\DAL\DAL\bin\Debug\EntityFramework.xml
+c:\Users\ilaia\OneDrive\documentos\visual studio 2015\Projects\DAL\DAL\bin\Debug\EntityFramework.SqlServer.xml
+c:\Users\ilaia\OneDrive\documentos\visual studio 2015\Projects\DAL\DAL\obj\Debug\DAL.dll
+c:\Users\ilaia\OneDrive\documentos\visual studio 2015\Projects\DAL\DAL\obj\Debug\DAL.pdb
+c:\Users\ilaia\OneDrive\documentos\visual studio 2015\Projects\DAL\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+c:\Users\ilaia\OneDrive\documentos\visual studio 2015\Projects\DAL\DAL\bin\Debug\Model.dll
+c:\Users\ilaia\OneDrive\documentos\visual studio 2015\Projects\DAL\DAL\bin\Debug\Model.pdb
+E:\Quicheria\DAL\bin\Debug\DAL.dll.config
+E:\Quicheria\DAL\bin\Debug\DAL.dll
+E:\Quicheria\DAL\bin\Debug\DAL.pdb
+E:\Quicheria\DAL\bin\Debug\EntityFramework.dll
+E:\Quicheria\DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\Quicheria\DAL\bin\Debug\Model.dll
+E:\Quicheria\DAL\bin\Debug\Model.pdb
+E:\Quicheria\DAL\bin\Debug\EntityFramework.xml
+E:\Quicheria\DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\Quicheria\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\Quicheria\DAL\obj\Debug\DAL.dll
+E:\Quicheria\DAL\obj\Debug\DAL.pdb

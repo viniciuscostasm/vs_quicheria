@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{076C9008-950B-4D8C-9AC7-473AD81B4544}</ProjectGuid>
+    <ProjectGuid>{5EB5AB4A-F99E-4ED6-A7AA-2997A72C675E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Model</RootNamespace>
@@ -30,7 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,42 +49,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cadastro.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cadastro.tt</DependentUpon>
+    </Compile>
     <Compile Include="Category.cs">
-      <DependentUpon>RMS_DB.tt</DependentUpon>
+      <DependentUpon>Cadastro.tt</DependentUpon>
     </Compile>
     <Compile Include="Customer.cs">
-      <DependentUpon>RMS_DB.tt</DependentUpon>
+      <DependentUpon>Cadastro.tt</DependentUpon>
     </Compile>
     <Compile Include="Invoice_Info.cs">
-      <DependentUpon>RMS_DB.tt</DependentUpon>
+      <DependentUpon>Cadastro.tt</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">
-      <DependentUpon>RMS_DB.tt</DependentUpon>
+      <DependentUpon>Cadastro.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductSold.cs">
-      <DependentUpon>RMS_DB.tt</DependentUpon>
+      <DependentUpon>Cadastro.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registration.cs">
-      <DependentUpon>RMS_DB.tt</DependentUpon>
+      <DependentUpon>Cadastro.tt</DependentUpon>
     </Compile>
-    <Compile Include="RMS_DB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RMS_DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>RMS_DB.tt</DependentUpon>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Cadastro.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="RMS_DB.tt">
+    <Content Include="Cadastro.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>RMS_DB.cs</LastGenOutput>
+      <LastGenOutput>Cadastro.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

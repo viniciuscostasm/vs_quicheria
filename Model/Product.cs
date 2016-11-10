@@ -17,7 +17,7 @@ namespace Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Product()
         {
-            this.ProductSolds = new HashSet<ProductSold>();
+            this.ProductSold = new HashSet<ProductSold>();
         }
     
         public int ProductID { get; set; }
@@ -27,6 +27,6 @@ namespace Model
     
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductSold> ProductSolds { get; set; }
+        public virtual ICollection<ProductSold> ProductSold { get; set; }
     }
 }

@@ -1,4 +1,7 @@
-﻿namespace SystemQuiche
+﻿
+using SystemQuiche;
+
+namespace SystemQuiche
 {
     partial class frmCategoriaRecord
     {
@@ -28,43 +31,60 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cadastroDataSet = new SystemQuiche.CadastroDataSet();
+            this.categoryTableAdapter = new SystemQuiche.CadastroDataSetTableAdapters.CategoryTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cadastroDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column2,
-            this.Column1});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 1);
-            this.dataGridView1.MultiSelect = false;
+            this.idCategoryDataGridViewTextBoxColumn,
+            this.categoryNameDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.categoryBindingSource;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.Size = new System.Drawing.Size(396, 339);
-            this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
-            this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
+            this.dataGridView1.Size = new System.Drawing.Size(399, 341);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
-            // Column2
+            // idCategoryDataGridViewTextBoxColumn
             // 
-            this.Column2.HeaderText = "Categoria ID";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.idCategoryDataGridViewTextBoxColumn.DataPropertyName = "IdCategory";
+            this.idCategoryDataGridViewTextBoxColumn.HeaderText = "IdCategory";
+            this.idCategoryDataGridViewTextBoxColumn.Name = "idCategoryDataGridViewTextBoxColumn";
+            this.idCategoryDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Column1
+            // categoryNameDataGridViewTextBoxColumn
             // 
-            this.Column1.HeaderText = "Nome da Categoria";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 250;
+            this.categoryNameDataGridViewTextBoxColumn.DataPropertyName = "CategoryName";
+            this.categoryNameDataGridViewTextBoxColumn.HeaderText = "CategoryName";
+            this.categoryNameDataGridViewTextBoxColumn.Name = "categoryNameDataGridViewTextBoxColumn";
+            this.categoryNameDataGridViewTextBoxColumn.Width = 250;
+            // 
+            // categoryBindingSource
+            // 
+            this.categoryBindingSource.DataMember = "Category";
+            this.categoryBindingSource.DataSource = this.cadastroDataSet;
+            // 
+            // cadastroDataSet
+            // 
+            this.cadastroDataSet.DataSetName = "CadastroDataSet";
+            this.cadastroDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // categoryTableAdapter
+            // 
+            this.categoryTableAdapter.ClearBeforeFill = true;
             // 
             // frmCategoriaRecord
             // 
@@ -84,14 +104,19 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCategoriaRecord_FormClosing);
             this.Load += new System.EventHandler(this.frmCategoriaRecord_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cadastroDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private CadastroDataSet cadastroDataSet;
+        private System.Windows.Forms.BindingSource categoryBindingSource;
+        private CadastroDataSetTableAdapters.CategoryTableAdapter categoryTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCategoryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryNameDataGridViewTextBoxColumn;
     }
 }

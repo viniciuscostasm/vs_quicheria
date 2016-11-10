@@ -17,7 +17,7 @@ namespace Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Invoice_Info()
         {
-            this.ProductSolds = new HashSet<ProductSold>();
+            this.ProductSold = new HashSet<ProductSold>();
         }
     
         public string InvoiceNo { get; set; }
@@ -33,6 +33,6 @@ namespace Model
         public string Remarks { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductSold> ProductSolds { get; set; }
+        public virtual ICollection<ProductSold> ProductSold { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace BLL
     public class ProductBLL
     {
         IProductRepositorio _productRepositorio;
-
+        Product pdt = new Product();
         public ProductBLL()
         {
             //cria uma instância do repositorio Produto
@@ -42,10 +42,22 @@ namespace BLL
             }
         }
 
-        public void AdicionarProduto(Product prod)
+        public void AdicionarProduto(string nm, double prc, int id)
         {
-            _productRepositorio.Adicionar(prod);
-            _productRepositorio.Commit();
+            try
+            {
+                pdt.ProductName = nm;
+                pdt.Price = prc;
+                pdt.CategoryID = id;
+                _productRepositorio.Adicionar(pdt);
+                _productRepositorio.Commit();
+                //return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
         }
 
         public Product Localizar(int id)
@@ -53,9 +65,9 @@ namespace BLL
             return _productRepositorio.Find(id);
         }
 
-        public void ExcluirProduto(Product prod)
+        public void ExcluirProduto(String nm)
         {
-            _productRepositorio.Deletar(c => c == prod);
+            _productRepositorio.Deletar(p => p.ProductName == nm);
             _productRepositorio.Commit();           
         }
 
