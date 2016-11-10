@@ -63,9 +63,9 @@ namespace SystemQuiche.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap add_user_icon {
+        internal static System.Drawing.Bitmap addUser {
             get {
-                object obj = ResourceManager.GetObject("add-user-icon", resourceCulture);
+                object obj = ResourceManager.GetObject("addUser", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace SystemQuiche.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap addUser {
+        internal static System.Drawing.Bitmap addUserIcon {
             get {
-                object obj = ResourceManager.GetObject("addUser", resourceCulture);
+                object obj = ResourceManager.GetObject("addUserIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,19 @@ namespace SystemQuiche.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap oie_transparent__4_ {
+        internal static System.Drawing.Bitmap oie_transparent {
             get {
-                object obj = ResourceManager.GetObject("oie_transparent (4)", resourceCulture);
+                object obj = ResourceManager.GetObject("oie_transparent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap quiche {
+            get {
+                object obj = ResourceManager.GetObject("quiche", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -155,7 +165,7 @@ namespace SystemQuiche.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Quiche_icon {
             get {
-                object obj = ResourceManager.GetObject("Quiche-icon", resourceCulture);
+                object obj = ResourceManager.GetObject("Quiche_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -165,7 +175,7 @@ namespace SystemQuiche.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Quiche_icon1 {
             get {
-                object obj = ResourceManager.GetObject("Quiche-icon1", resourceCulture);
+                object obj = ResourceManager.GetObject("Quiche_icon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,16 +186,6 @@ namespace SystemQuiche.Properties {
         internal static System.Drawing.Bitmap quicheria {
             get {
                 object obj = ResourceManager.GetObject("quicheria", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap quicheria_1_ {
-            get {
-                object obj = ResourceManager.GetObject("quicheria(1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace SystemQuiche {
+namespace DAL {
     
     
     /// <summary>
@@ -3440,7 +3440,7 @@ namespace SystemQuiche {
         }
     }
 }
-namespace SystemQuiche.CadastroDataSetTableAdapters {
+namespace DAL.CadastroDataSetTableAdapters {
     
     
     /// <summary>

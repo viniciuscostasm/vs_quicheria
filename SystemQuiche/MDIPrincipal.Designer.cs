@@ -1,5 +1,5 @@
-﻿namespace SystemQuiche
-{
+﻿
+namespace SystemQuiche{
     partial class MDIPrincipal
     {
         /// <summary>
@@ -99,7 +99,7 @@
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(451, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(482, 17);
             this.toolStripStatusLabel1.Spring = true;
             // 
             // toolStripStatusLabel2
@@ -128,7 +128,7 @@
             // cadastrosToolStripMenuItem
             // 
             this.cadastrosToolStripMenuItem.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cadastrosToolStripMenuItem.Image = global::SystemQuiche.Properties.Resources.add_user_icon;
+            this.cadastrosToolStripMenuItem.Image = global::SystemQuiche.Properties.Resources.addUserIcon;
             this.cadastrosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(91, 83);
@@ -251,7 +251,6 @@
             // 
             // registroToolStripMenuItem1
             // 
-            this.registroToolStripMenuItem1.Image = global::SystemQuiche.Properties.Resources.add_user_icon;
             this.registroToolStripMenuItem1.Name = "registroToolStripMenuItem1";
             this.registroToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.R)));
             this.registroToolStripMenuItem1.Size = new System.Drawing.Size(196, 22);
@@ -277,7 +276,7 @@
             // perfilToolStripMenuItem1
             // 
             this.perfilToolStripMenuItem1.Name = "perfilToolStripMenuItem1";
-            this.perfilToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.perfilToolStripMenuItem1.Size = new System.Drawing.Size(101, 22);
             this.perfilToolStripMenuItem1.Text = "Perfil";
             this.perfilToolStripMenuItem1.Click += new System.EventHandler(this.perfilToolStripMenuItem1_Click);
             // 
@@ -300,14 +299,14 @@
             // clientesToolStripMenuItem2
             // 
             this.clientesToolStripMenuItem2.Name = "clientesToolStripMenuItem2";
-            this.clientesToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.clientesToolStripMenuItem2.Size = new System.Drawing.Size(116, 22);
             this.clientesToolStripMenuItem2.Text = "Clientes";
             this.clientesToolStripMenuItem2.Click += new System.EventHandler(this.clientesToolStripMenuItem2_Click);
             // 
             // vendasToolStripMenuItem1
             // 
             this.vendasToolStripMenuItem1.Name = "vendasToolStripMenuItem1";
-            this.vendasToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.vendasToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
             this.vendasToolStripMenuItem1.Text = "Vendas";
             this.vendasToolStripMenuItem1.Click += new System.EventHandler(this.vendasToolStripMenuItem1_Click);
             // 
@@ -375,7 +374,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::SystemQuiche.Properties.Resources.quicheria_1_;
+            this.BackgroundImage = global::SystemQuiche.Properties.Resources.quiche;
             this.ClientSize = new System.Drawing.Size(866, 604);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip1);

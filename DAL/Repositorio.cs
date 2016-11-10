@@ -9,7 +9,7 @@ namespace DAL
     // classe chamada Repositorio que irá implementar a nossa interface
     public class Repositorio<T> : IRepositorio<T> , IDisposable where T : class
     {
-        /* Aqui estamos referenciando o contexto representando por RMS_DBEntities na variável Context 
+        /* Aqui estamos referenciando o contexto representando por CadastroEntities na variável Context 
          * e criando uma nova instância do contexto. Tudo depende do contexto e vamos usar sua 
          * referência em todos os métodos para acessar as entidades no Entity Data Model. */
 

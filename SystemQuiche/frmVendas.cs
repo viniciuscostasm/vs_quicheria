@@ -10,8 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 
-namespace SystemQuiche
-{
+namespace SystemQuiche{
     public partial class frmVendas : Form
     {
         public frmVendas()
@@ -76,6 +75,8 @@ namespace SystemQuiche
 
         private void frmVendas_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'cadastroDataSet.Product' table. You can move, or remove it, as needed.
+            this.productTableAdapter.Fill(this.cadastroDataSet.Product);
 
         }
 

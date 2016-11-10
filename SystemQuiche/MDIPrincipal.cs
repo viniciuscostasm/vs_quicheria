@@ -1,8 +1,8 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Windows.Forms;
 
-namespace SystemQuiche
-{
+namespace SystemQuiche{
     public partial class MDIPrincipal : Form
     {
         private int childFormNumber = 0;
@@ -170,7 +170,11 @@ namespace SystemQuiche
 
         private void MDIPrincipal_Load(object sender, EventArgs e)
         {
-
+            RegistrationBLL reg = new RegistrationBLL();
+            frmLogin frm = new frmLogin();
+            var nome = frm.txtNomeUsuario.Text;
+            var user = reg.Localizar(nome);
+            toolStripStatusLabel1.Text = nome;
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)

@@ -1,5 +1,4 @@
-﻿namespace SystemQuiche
-{
+﻿namespace SystemQuiche{
     partial class frmClientesRecord
     {
         /// <summary>

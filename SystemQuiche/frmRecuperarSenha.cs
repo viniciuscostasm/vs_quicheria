@@ -8,8 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SystemQuiche
-{
+namespace SystemQuiche{
     public partial class frmRecuperarSenha : Form
     {
         public frmRecuperarSenha()

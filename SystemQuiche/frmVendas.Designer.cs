@@ -1,4 +1,6 @@
-﻿namespace SystemQuiche
+﻿using DAL;
+
+namespace SystemQuiche
 {
     partial class frmVendas
     {
@@ -46,6 +48,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbNomeProduto = new System.Windows.Forms.ComboBox();
+            this.cadastroDataSet = new CadastroDataSet();
             this.label4 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -80,9 +83,13 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnRemover = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
+            this.productTableAdapter = new DAL.CadastroDataSetTableAdapters.ProductTableAdapter();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cadastroDataSet)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -242,11 +249,19 @@
             // 
             this.cmbNomeProduto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbNomeProduto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbNomeProduto.DataSource = this.productBindingSource;
+            this.cmbNomeProduto.DisplayMember = "ProductName";
             this.cmbNomeProduto.FormattingEnabled = true;
             this.cmbNomeProduto.Location = new System.Drawing.Point(138, 25);
             this.cmbNomeProduto.Name = "cmbNomeProduto";
             this.cmbNomeProduto.Size = new System.Drawing.Size(401, 25);
             this.cmbNomeProduto.TabIndex = 0;
+            this.cmbNomeProduto.ValueMember = "ProductID";
+            // 
+            // cadastroDataSet
+            // 
+            this.cadastroDataSet.DataSetName = "CadastroDataSet";
+            this.cadastroDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label4
             // 
@@ -593,6 +608,15 @@
             this.btnPrint.Text = "&Imprimir Fatura";
             this.btnPrint.UseVisualStyleBackColor = true;
             // 
+            // productTableAdapter
+            // 
+            this.productTableAdapter.ClearBeforeFill = true;
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataMember = "Product";
+            this.productBindingSource.DataSource = this.cadastroDataSet;
+            // 
             // frmVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -624,9 +648,11 @@
             this.Load += new System.EventHandler(this.frmVendas_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cadastroDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -685,5 +711,8 @@
         internal System.Windows.Forms.TextBox txtSubTotal;
         internal System.Windows.Forms.Button btnRemover;
         internal System.Windows.Forms.Button btnPrint;
+        private DAL.CadastroDataSet cadastroDataSet;
+        private DAL.CadastroDataSetTableAdapters.ProductTableAdapter productTableAdapter;
+        private System.Windows.Forms.BindingSource productBindingSource;
     }
 }

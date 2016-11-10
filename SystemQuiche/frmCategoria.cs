@@ -50,7 +50,7 @@ namespace SystemQuiche
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             
-            if(catBLL.AdicionarCategoria(txtNomeCategoria.Text))
+            if(catBLL.AdicionarCategoria(txtNomeCategoria.Text.ToUpper()))
                 MessageBox.Show("Categoria inserida com sucesso", "My Application",
                     MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             txtNomeCategoria.Clear();

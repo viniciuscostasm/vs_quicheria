@@ -1,4 +1,5 @@
-﻿namespace SystemQuiche
+﻿
+namespace SystemQuiche
 {
     partial class frmProdutos
     {
@@ -35,22 +36,22 @@
             this.txtPreco = new System.Windows.Forms.TextBox();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.CadastroDataSet = new SystemQuiche.CadastroDataSet();
+            this.CadastroDataSet = new DAL.CadastroDataSet();
             this.txtNomeProduto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtProcurarProduto = new System.Windows.Forms.TextBox();
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnDeletar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
-            this.categoryTableAdapter = new SystemQuiche.CadastroDataSetTableAdapters.CategoryTableAdapter();
+            this.categoryTableAdapter = new DAL.CadastroDataSetTableAdapters.CategoryTableAdapter();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productTableAdapter = new SystemQuiche.CadastroDataSetTableAdapters.ProductTableAdapter();
+            this.productTableAdapter = new DAL.CadastroDataSetTableAdapters.ProductTableAdapter();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -175,9 +176,9 @@
             this.txtProcurarProduto.Size = new System.Drawing.Size(258, 24);
             this.txtProcurarProduto.TabIndex = 0;
             // 
-            // openFileDialog
+            // openFileDialog1
             // 
-            this.openFileDialog.FileName = "openFileDialog";
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // panel1
             // 
@@ -266,7 +267,7 @@
             this.dataGridView.ReadOnly = true;
             this.dataGridView.Size = new System.Drawing.Size(625, 277);
             this.dataGridView.TabIndex = 7;
-            this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.dataGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_CellMouseDoubleClick);
             // 
             // productIDDataGridViewTextBoxColumn
             // 
@@ -345,17 +346,17 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtProcurarProduto;
-        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Button btnNovo;
         public System.Windows.Forms.Button btnAtualizar;
         public System.Windows.Forms.Button btnDeletar;
         public System.Windows.Forms.Button btnSalvar;
-        private CadastroDataSet CadastroDataSet;
+        private DAL.CadastroDataSet CadastroDataSet;
         private System.Windows.Forms.BindingSource categoryBindingSource;
-        private CadastroDataSetTableAdapters.CategoryTableAdapter categoryTableAdapter;
+        private DAL.CadastroDataSetTableAdapters.CategoryTableAdapter categoryTableAdapter;
         private System.Windows.Forms.BindingSource productBindingSource;
-        private CadastroDataSetTableAdapters.ProductTableAdapter productTableAdapter;
+        private DAL.CadastroDataSetTableAdapters.ProductTableAdapter productTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;

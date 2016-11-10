@@ -78,7 +78,7 @@ namespace BLL
             }
         }
 
-        public void ExcluirCategoria(String nm)
+        public void ExcluirCategoria(string nm)
         {
             try
             {
@@ -87,7 +87,7 @@ namespace BLL
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw new Exception(ex.Message);
             }
         }
 

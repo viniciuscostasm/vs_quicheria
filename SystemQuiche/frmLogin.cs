@@ -11,13 +11,11 @@ using System.Data.SqlClient;
 using BLL;
 using Model;
 
-
-namespace SystemQuiche
-{
+namespace SystemQuiche{
     public partial class frmLogin : Form
     {
 
-       RegistrationBLL reg = new RegistrationBLL();
+       RegistrationBLL reg;
 
 
         public frmLogin()
@@ -33,13 +31,20 @@ namespace SystemQuiche
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            
+            reg = new RegistrationBLL();
+            if(reg.Logar(txtNomeUsuario.Text, txtSenha.Text))
+            {
                 this.Hide();
                 MDIPrincipal frm = new MDIPrincipal();
                 frm.Show();
                 frm.lblUsuario.Text = txtNomeUsuario.Text;
-                   
-
+            }else
+            {
+                MessageBox.Show("Usuário ou senha inválida", "System Quiche",
+                   MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                txtNomeUsuario.Clear();
+                txtSenha.Clear();
+            }
                 
         }
 

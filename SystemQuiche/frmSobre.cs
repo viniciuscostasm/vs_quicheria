@@ -7,8 +7,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SystemQuiche
-{
+namespace SystemQuiche{
     partial class frmSobre : Form
     {
         public frmSobre()

@@ -225,6 +225,8 @@ E:\Quicheria\SystemQuiche\bin\Debug\Model.pdb
 E:\Quicheria\SystemQuiche\bin\Debug\EntityFramework.xml
 E:\Quicheria\SystemQuiche\bin\Debug\EntityFramework.SqlServer.xml
 E:\Quicheria\SystemQuiche\obj\Debug\SystemQuiche.csprojResolveAssemblyReference.cache
+E:\Quicheria\SystemQuiche\obj\Debug\SystemQuiche.Properties.Resources.resources
+E:\Quicheria\SystemQuiche\obj\Debug\SystemQuiche.csproj.GenerateResource.Cache
 E:\Quicheria\SystemQuiche\obj\Debug\SystemQuiche.frmAlterarSenha.resources
 E:\Quicheria\SystemQuiche\obj\Debug\SystemQuiche.frmCadastroUsuario.resources
 E:\Quicheria\SystemQuiche\obj\Debug\SystemQuiche.frmCategoria.resources
@@ -245,5 +247,3 @@ E:\Quicheria\SystemQuiche\obj\Debug\SystemQuiche.frmVendas.resources
 E:\Quicheria\SystemQuiche\obj\Debug\SystemQuiche.frmVendasRecord.resources
 E:\Quicheria\SystemQuiche\obj\Debug\SystemQuiche.frmVendasReport.resources
 E:\Quicheria\SystemQuiche\obj\Debug\SystemQuiche.MDIPrincipal.resources
-E:\Quicheria\SystemQuiche\obj\Debug\SystemQuiche.Properties.Resources.resources
-E:\Quicheria\SystemQuiche\obj\Debug\SystemQuiche.csproj.GenerateResource.Cache

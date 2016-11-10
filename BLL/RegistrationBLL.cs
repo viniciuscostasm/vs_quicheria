@@ -11,7 +11,7 @@ namespace BLL
     public class RegistrationBLL
     {
         IRegistrationRepositorio _registrationRepositorio;
-
+        Registration reg;
         public RegistrationBLL()
         {
             try
@@ -44,10 +44,18 @@ namespace BLL
                 throw ex;
             }
         }
-        public void AdicionarRepositorio(Registration reg)
+        public void AdicionarRegistration(string usuario, string tipo, string senha, string nome, string contato, string email)
         {
+
             try
             {
+                reg = new Registration();
+                reg.UserName = usuario;
+                reg.UserType = tipo;
+                reg.Password = senha;
+                reg.Name = nome;
+                reg.ContactNo = contato;
+                reg.Email = email;
                 _registrationRepositorio.Adicionar(reg);
                 _registrationRepositorio.Commit();
             }
@@ -56,11 +64,31 @@ namespace BLL
                 throw ex;
             }
         }
-        public Registration Localizar(int id)
+        public Registration Localizar(string user)
         {
             try
             {
-                return _registrationRepositorio.Find(id);
+                return _registrationRepositorio.Find(user);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public Boolean Logar(string login, string senha)
+        {
+            
+            try
+            {
+                var dbo = new CadastroEntities();
+                var user = dbo.Registration.FirstOrDefault(u => u.UserName == login && u.Password == senha);
+                
+                if (user == null)
+                {
+                    return false;
+                }
+
+                    return true;
             }
             catch (Exception ex)
             {

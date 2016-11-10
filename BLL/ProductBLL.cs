@@ -16,7 +16,7 @@ namespace BLL
     public class ProductBLL
     {
         IProductRepositorio _productRepositorio;
-        Product pdt = new Product();
+        Product pdt;
         public ProductBLL()
         {
             //cria uma instância do repositorio Produto
@@ -44,11 +44,13 @@ namespace BLL
 
         public void AdicionarProduto(string nm, double prc, int id)
         {
+            pdt = new Product();
+            pdt.ProductName = nm;
+            pdt.Price = prc;
+            pdt.CategoryID = id;
             try
             {
-                pdt.ProductName = nm;
-                pdt.Price = prc;
-                pdt.CategoryID = id;
+                
                 _productRepositorio.Adicionar(pdt);
                 _productRepositorio.Commit();
                 //return true;
