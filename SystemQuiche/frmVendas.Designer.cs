@@ -250,6 +250,7 @@ namespace SystemQuiche
             this.cmbNomeProduto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbNomeProduto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbNomeProduto.DataSource = this.productBindingSource;
+            this.cmbNomeProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNomeProduto.DisplayMember = "ProductName";
             this.cmbNomeProduto.FormattingEnabled = true;
             this.cmbNomeProduto.Location = new System.Drawing.Point(138, 25);

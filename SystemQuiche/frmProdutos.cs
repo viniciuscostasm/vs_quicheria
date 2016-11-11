@@ -36,7 +36,7 @@ namespace SystemQuiche{
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            pdt.AdicionarProduto(txtNomeProduto.Text.ToUpper(), Convert.ToDouble(txtPreco.Text), 2084);
+            pdt.AdicionarProduto(txtNomeProduto.Text.ToUpper(), Convert.ToDouble(txtPreco.Text), Convert.ToInt32(cmbCategoria.SelectedValue));
             MessageBox.Show("Produto inserido com sucesso", "My Application",
                    MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             txtNomeProduto.Clear();
@@ -47,6 +47,7 @@ namespace SystemQuiche{
         private void dataGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             this.txtNomeProduto.Text = (dataGridView.CurrentRow.Cells[1].Value.ToString());
+            this.cmbCategoria.SelectedValue = (dataGridView.CurrentRow.Cells[2].Value.ToString());
             this.txtPreco.Text =  (dataGridView.CurrentRow.Cells[3].Value.ToString());
             this.btnDeletar.Enabled = true;
             this.btnAtualizar.Enabled = true;
@@ -64,6 +65,15 @@ namespace SystemQuiche{
             txtNomeProduto.Clear();
             txtPreco.Clear();
             this.productTableAdapter.Update(this.CadastroDataSet.Product);
+        }
+
+        private void cmbCategoria_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.cmbCategoria.DataSource = this.categoryBindingSource;
+            this.cmbCategoria.DisplayMember = "CategoryName";
+            this.cmbCategoria.TabIndex = 0;
+            this.cmbCategoria.ValueMember = "IdCategory";
+
         }
     }
 }

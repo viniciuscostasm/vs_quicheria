@@ -106,14 +106,15 @@ namespace SystemQuiche
             // cmbCategoria
             // 
             this.cmbCategoria.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.categoryBindingSource, "IdCategory", true));
-            this.cmbCategoria.DataSource = this.categoryBindingSource;
             this.cmbCategoria.DisplayMember = "CategoryName";
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Location = new System.Drawing.Point(166, 70);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(297, 25);
             this.cmbCategoria.TabIndex = 1;
             this.cmbCategoria.ValueMember = "IdCategory";
+            this.cmbCategoria.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cmbCategoria_MouseClick);
             // 
             // categoryBindingSource
             // 
