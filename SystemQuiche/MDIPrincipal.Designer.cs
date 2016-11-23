@@ -135,6 +135,7 @@ namespace SystemQuiche{
             this.cadastrosToolStripMenuItem.Text = "Registros";
             this.cadastrosToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.cadastrosToolStripMenuItem.ToolTipText = "Cadastrar Usuário";
+            this.cadastrosToolStripMenuItem.Click += new System.EventHandler(this.cadastrosToolStripMenuItem_Click);
             // 
             // produtosToolStripMenuItem
             // 
@@ -146,6 +147,7 @@ namespace SystemQuiche{
             this.produtosToolStripMenuItem.Text = "Produtos";
             this.produtosToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.produtosToolStripMenuItem.ToolTipText = "Produtos";
+            this.produtosToolStripMenuItem.Click += new System.EventHandler(this.produtosToolStripMenuItem_Click);
             // 
             // faturamentoToolStripMenuItem
             // 
@@ -157,6 +159,7 @@ namespace SystemQuiche{
             this.faturamentoToolStripMenuItem.Text = "Faturamento";
             this.faturamentoToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.faturamentoToolStripMenuItem.ToolTipText = "Verificar Faturamento";
+            this.faturamentoToolStripMenuItem.Click += new System.EventHandler(this.faturamentoToolStripMenuItem_Click);
             // 
             // mesasToolStripMenuItem
             // 

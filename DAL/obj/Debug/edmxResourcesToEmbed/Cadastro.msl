@@ -4,7 +4,7 @@
     <EntitySetMapping Name="Category">
       <EntityTypeMapping TypeName="CadastroModel.Category">
         <MappingFragment StoreEntitySet="Category">
-          <ScalarProperty Name="IdCategory" ColumnName="IdCategory" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
         </MappingFragment>
       </EntityTypeMapping>

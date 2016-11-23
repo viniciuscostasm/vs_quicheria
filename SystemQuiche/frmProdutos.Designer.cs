@@ -36,34 +36,34 @@ namespace SystemQuiche
             this.txtPreco = new System.Windows.Forms.TextBox();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.CadastroDataSet = new DAL.CadastroDataSet();
+            this.cadastroDataSet = new SystemQuiche.CadastroDataSet();
             this.txtNomeProduto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtProcurarProduto = new System.Windows.Forms.TextBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnDeletar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
-            this.categoryTableAdapter = new DAL.CadastroDataSetTableAdapters.CategoryTableAdapter();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productTableAdapter = new DAL.CadastroDataSetTableAdapters.ProductTableAdapter();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoryTableAdapter = new SystemQuiche.CadastroDataSetTableAdapters.CategoryTableAdapter();
+            this.productTableAdapter = new SystemQuiche.CadastroDataSetTableAdapters.ProductTableAdapter();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CadastroDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cadastroDataSet)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCategoriaID
@@ -102,10 +102,14 @@ namespace SystemQuiche
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(151, 24);
             this.txtPreco.TabIndex = 4;
+            this.txtPreco.TextChanged += new System.EventHandler(this.txtPreco_TextChanged);
             // 
             // cmbCategoria
             // 
-            this.cmbCategoria.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.categoryBindingSource, "IdCategory", true));
+            this.cmbCategoria.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cmbCategoria.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbCategoria.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.categoryBindingSource, "Id", true));
+            this.cmbCategoria.DataSource = this.categoryBindingSource;
             this.cmbCategoria.DisplayMember = "CategoryName";
             this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.FormattingEnabled = true;
@@ -113,18 +117,17 @@ namespace SystemQuiche
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(297, 25);
             this.cmbCategoria.TabIndex = 1;
-            this.cmbCategoria.ValueMember = "IdCategory";
-            this.cmbCategoria.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cmbCategoria_MouseClick);
+            this.cmbCategoria.ValueMember = "Id";
             // 
             // categoryBindingSource
             // 
             this.categoryBindingSource.DataMember = "Category";
-            this.categoryBindingSource.DataSource = this.CadastroDataSet;
+            this.categoryBindingSource.DataSource = this.cadastroDataSet;
             // 
-            // CadastroDataSet
+            // cadastroDataSet
             // 
-            this.CadastroDataSet.DataSetName = "RMS_DBDataSet";
-            this.CadastroDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.cadastroDataSet.DataSetName = "CadastroDataSet";
+            this.cadastroDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtNomeProduto
             // 
@@ -177,9 +180,9 @@ namespace SystemQuiche
             this.txtProcurarProduto.Size = new System.Drawing.Size(258, 24);
             this.txtProcurarProduto.TabIndex = 0;
             // 
-            // openFileDialog1
+            // openFileDialog
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog.FileName = "openFileDialog1";
             // 
             // panel1
             // 
@@ -203,6 +206,7 @@ namespace SystemQuiche
             this.btnAtualizar.TabIndex = 3;
             this.btnAtualizar.Text = "&Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // btnDeletar
             // 
@@ -238,19 +242,6 @@ namespace SystemQuiche
             this.btnNovo.UseVisualStyleBackColor = true;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
-            // categoryTableAdapter
-            // 
-            this.categoryTableAdapter.ClearBeforeFill = true;
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataMember = "Product";
-            this.productBindingSource.DataSource = this.CadastroDataSet;
-            // 
-            // productTableAdapter
-            // 
-            this.productTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridView
             // 
             this.dataGridView.AllowUserToAddRows = false;
@@ -263,10 +254,10 @@ namespace SystemQuiche
             this.categoryIDDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn});
             this.dataGridView.DataSource = this.productBindingSource;
-            this.dataGridView.Location = new System.Drawing.Point(24, 321);
+            this.dataGridView.Location = new System.Drawing.Point(24, 326);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
-            this.dataGridView.Size = new System.Drawing.Size(625, 277);
+            this.dataGridView.Size = new System.Drawing.Size(625, 267);
             this.dataGridView.TabIndex = 7;
             this.dataGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_CellMouseDoubleClick);
             // 
@@ -298,6 +289,19 @@ namespace SystemQuiche
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             this.priceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataMember = "Product";
+            this.productBindingSource.DataSource = this.cadastroDataSet;
+            // 
+            // categoryTableAdapter
+            // 
+            this.categoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // productTableAdapter
+            // 
+            this.productTableAdapter.ClearBeforeFill = true;
+            // 
             // frmProdutos
             // 
             this.AcceptButton = this.btnSalvar;
@@ -323,12 +327,12 @@ namespace SystemQuiche
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CadastroDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cadastroDataSet)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,18 +351,18 @@ namespace SystemQuiche
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtProcurarProduto;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Button btnNovo;
         public System.Windows.Forms.Button btnAtualizar;
         public System.Windows.Forms.Button btnDeletar;
         public System.Windows.Forms.Button btnSalvar;
-        private DAL.CadastroDataSet CadastroDataSet;
-        private System.Windows.Forms.BindingSource categoryBindingSource;
-        private DAL.CadastroDataSetTableAdapters.CategoryTableAdapter categoryTableAdapter;
-        private System.Windows.Forms.BindingSource productBindingSource;
-        private DAL.CadastroDataSetTableAdapters.ProductTableAdapter productTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView;
+        private CadastroDataSet cadastroDataSet;
+        private System.Windows.Forms.BindingSource categoryBindingSource;
+        private CadastroDataSetTableAdapters.CategoryTableAdapter categoryTableAdapter;
+        private System.Windows.Forms.BindingSource productBindingSource;
+        private CadastroDataSetTableAdapters.ProductTableAdapter productTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryIDDataGridViewTextBoxColumn;

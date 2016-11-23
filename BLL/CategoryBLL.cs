@@ -41,7 +41,7 @@ namespace BLL
                 else
                 {
                     //retorna uma determinada categoria pelo seu ID
-                    return _categoryRepositorio.Get(c => c.IdCategory == ID).ToList();
+                    return _categoryRepositorio.Get(c => c.Id == ID).ToList();
                 }
             }
             catch (Exception ex)
@@ -49,18 +49,33 @@ namespace BLL
                 throw ex;
             }
         }
-        public Boolean AdicionarCategoria(String nm)
+
+        public List<Model.Category> GetAll()
+        {
+            try
+            {
+               
+                    //retorna todas as categorias
+                    return _categoryRepositorio.GetTodos().ToList();
+                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public string AdicionarCategoria(string nm)
         {
             try
             {
                 cat.CategoryName = nm;
                 _categoryRepositorio.Adicionar(cat);
                 _categoryRepositorio.Commit();
-                return true;
+                return "Categoria cadastrada com sucesso!";
             }
             catch (Exception ex)
             {
-                throw ex;
+                return ex.Message;
 
             }
             
@@ -78,16 +93,17 @@ namespace BLL
             }
         }
 
-        public void ExcluirCategoria(string nm)
+        public string ExcluirCategoria(string nm)
         {
             try
             {
                 _categoryRepositorio.Deletar(c => c.CategoryName == nm);
                 _categoryRepositorio.Commit();
+                return "Excluído com sucesso";
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                return ex.Message;
             }
         }
 

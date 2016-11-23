@@ -41,8 +41,10 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,10 +63,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Cadastro.edmx</DependentUpon>
     </Compile>
-    <Compile Include="CadastroDataSet.Designer.cs">
+    <Compile Include="CadastroDataSet.cs">
       <DependentUpon>CadastroDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>CadastroDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="CategoryRepositorio.cs" />
     <Compile Include="CustomerRepositorio.cs" />
@@ -95,14 +100,17 @@
       <DependentUpon>CadastroDataSet.xsd</DependentUpon>
     </None>
     <None Include="CadastroDataSet.xsd">
+      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>CadastroDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </None>
     <None Include="CadastroDataSet.xss">
       <DependentUpon>CadastroDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Cadastro.Context.tt">
@@ -112,11 +120,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{5eb5ab4a-f99e-4ed6-a7aa-2997a72c675e}</Project>
+      <Project>{eae28d06-dc80-4074-b577-ca42d8337219}</Project>
       <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>

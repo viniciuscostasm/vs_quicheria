@@ -1,5 +1,4 @@
 ﻿using BLL;
-using Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,9 +49,9 @@ namespace SystemQuiche
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             
-            if(catBLL.AdicionarCategoria(txtNomeCategoria.Text.ToUpper()))
-                MessageBox.Show("Categoria inserida com sucesso", "My Application",
-                    MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            
+                MessageBox.Show(catBLL.AdicionarCategoria(txtNomeCategoria.Text.ToUpper()), 
+                    "My Application", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             txtNomeCategoria.Clear();
         }
 
@@ -60,8 +59,7 @@ namespace SystemQuiche
         {
             MessageBox.Show("Confirmar exclusão? ", "My Application",
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
-            catBLL.ExcluirCategoria(txtNomeCategoria.Text);
-                MessageBox.Show("Categoria inserida com sucesso", "My Application",
+                MessageBox.Show(catBLL.ExcluirCategoria(txtNomeCategoria.Text), "My Application",
                     MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             txtNomeCategoria.Clear();
         }

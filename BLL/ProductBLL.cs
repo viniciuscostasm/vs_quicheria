@@ -28,6 +28,11 @@ namespace BLL
             return _productRepositorio.Get(e => e.CategoryID == categoryID).ToList();
         }
 
+        public List<Product> GetProdutosPorNome(string nm)
+        {
+            return _productRepositorio.Get(e => e.ProductName == nm).ToList();
+        }
+
         public List<Product> Get_CategoriaInfo(int ProductID = -1)
         {
             if (ProductID == -1)
@@ -42,7 +47,7 @@ namespace BLL
             }
         }
 
-        public void AdicionarProduto(string nm, double prc, int id)
+        public String AdicionarProduto(string nm, double prc, int id)
         {
             pdt = new Product();
             pdt.ProductName = nm;
@@ -50,10 +55,23 @@ namespace BLL
             pdt.CategoryID = id;
             try
             {
-                
+
                 _productRepositorio.Adicionar(pdt);
                 _productRepositorio.Commit();
-                //return true;
+                return "Inserido com sucesso";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+
+            }
+        }
+
+        public Product Localizar(int id)
+        {
+            try
+            {
+                return _productRepositorio.Find(id);
             }
             catch (Exception ex)
             {
@@ -61,22 +79,44 @@ namespace BLL
 
             }
         }
-
-        public Product Localizar(int id)
+        public Product LocalizarPorNome(string nm)
         {
-            return _productRepositorio.Find(id);
+            return _productRepositorio.Get(p=> p.ProductName ==nm).SingleOrDefault();
         }
 
-        public void ExcluirProduto(String nm)
+        public string ExcluirProduto(String nm)
         {
-            _productRepositorio.Deletar(p => p.ProductName == nm);
-            _productRepositorio.Commit();           
+            try
+            {
+                _productRepositorio.Deletar(p => p.ProductName == nm);
+                _productRepositorio.Commit();
+                return "Excluído com sucesso";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+
+            }
         }
 
-        public void AlterarProduto(Product prod)
+        public string AlterarProduto(int id, string nm, double prc, int cat_id)
         {
-            _productRepositorio.Atualizar(prod);
-            _productRepositorio.Commit();
+            pdt = new Product();
+            pdt.ProductID = id;
+            pdt.ProductName = nm;
+            pdt.Price = prc;
+            pdt.CategoryID = cat_id;
+            try
+            {
+                _productRepositorio.Atualizar(pdt);
+                _productRepositorio.Commit();
+                return "Alterado com sucesso";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+
+            }
         }
     }
 }

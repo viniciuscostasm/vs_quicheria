@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using BLL;
-using Model;
 
 namespace SystemQuiche{
     public partial class frmLogin : Form

@@ -186,5 +186,27 @@ namespace SystemQuiche{
         {
             toolStripStatusLabel2.Text = DateTime.Now.ToString();
         }
+
+        private void faturamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form Faturamento = new frmVendas();
+            Faturamento.MdiParent = this;
+            Faturamento.Show();
+        }
+
+        private void cadastrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form CadastroUsuario = new frmCadastroUsuario();
+            CadastroUsuario.MdiParent = this;
+            CadastroUsuario.Show();
+        }
+
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form Produtos = new frmProdutos();
+            Produtos.MdiParent = this;
+            Produtos.Show();
+        }
+
     }
 }

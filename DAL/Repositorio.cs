@@ -87,9 +87,16 @@ namespace DAL
 
         public void Deletar(Func<T, bool> predicate)
         {
-            Context.Set<T>()
-           .Where(predicate).ToList()
-           .ForEach(del => Context.Set<T>().Remove(del));
+            try
+            {
+                Context.Set<T>()
+                .Where(predicate).ToList()
+                .ForEach(del => Context.Set<T>().Remove(del));
+            }
+            catch(System.Data.Entity.Validation.DbEntityValidationException ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         /* O método Commit() é um dos mais importantes porque ele usa o método SaveChanges() 

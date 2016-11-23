@@ -7,9 +7,9 @@
       <Schema Namespace="CadastroModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Category">
           <Key>
-            <PropertyRef Name="IdCategory" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="IdCategory" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CategoryName" Type="varchar" MaxLength="250" Nullable="false" />
         </EntityType>
         <EntityType Name="Customer">
@@ -89,7 +89,7 @@
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Category">
-              <PropertyRef Name="IdCategory" />
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Product">
               <PropertyRef Name="CategoryID" />
@@ -148,9 +148,9 @@
       <Schema Namespace="CadastroModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Category">
           <Key>
-            <PropertyRef Name="IdCategory" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="IdCategory" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CategoryName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Product" Relationship="Self.FK_Product_ToCategory" FromRole="Category" ToRole="Product" />
         </EntityType>
@@ -236,7 +236,7 @@
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Category">
-              <PropertyRef Name="IdCategory" />
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Product">
               <PropertyRef Name="CategoryID" />
@@ -297,7 +297,7 @@
           <EntitySetMapping Name="Category">
             <EntityTypeMapping TypeName="CadastroModel.Category">
               <MappingFragment StoreEntitySet="Category">
-                <ScalarProperty Name="IdCategory" ColumnName="IdCategory" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -26,3 +26,17 @@ E:\Quicheria\BLL\bin\Debug\EntityFramework.SqlServer.xml
 E:\Quicheria\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 E:\Quicheria\BLL\obj\Debug\BLL.dll
 E:\Quicheria\BLL\obj\Debug\BLL.pdb
+E:\Studio 2012\BLL\bin\Debug\BLL.dll.config
+E:\Studio 2012\BLL\bin\Debug\BLL.dll
+E:\Studio 2012\BLL\bin\Debug\BLL.pdb
+E:\Studio 2012\BLL\bin\Debug\DAL.dll
+E:\Studio 2012\BLL\bin\Debug\EntityFramework.dll
+E:\Studio 2012\BLL\bin\Debug\EntityFramework.SqlServer.dll
+E:\Studio 2012\BLL\bin\Debug\Model.dll
+E:\Studio 2012\BLL\bin\Debug\DAL.pdb
+E:\Studio 2012\BLL\bin\Debug\Model.pdb
+E:\Studio 2012\BLL\bin\Debug\EntityFramework.xml
+E:\Studio 2012\BLL\bin\Debug\EntityFramework.SqlServer.xml
+E:\Studio 2012\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+E:\Studio 2012\BLL\obj\Debug\BLL.dll
+E:\Studio 2012\BLL\obj\Debug\BLL.pdb

@@ -48,7 +48,8 @@ namespace SystemQuiche
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbNomeProduto = new System.Windows.Forms.ComboBox();
-            this.cadastroDataSet = new CadastroDataSet();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cadastroDataSet = new DAL.CadastroDataSet();
             this.label4 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -65,10 +66,10 @@ namespace SystemQuiche
             this.label8 = new System.Windows.Forms.Label();
             this.txtObservacoes = new System.Windows.Forms.RichTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtTotalPago = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.txtValorDevido = new System.Windows.Forms.TextBox();
-            this.txtTotalPago = new System.Windows.Forms.TextBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.txtDescontoAmount = new System.Windows.Forms.TextBox();
             this.txtDescontoPer = new System.Windows.Forms.TextBox();
@@ -84,12 +85,11 @@ namespace SystemQuiche
             this.btnRemover = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.productTableAdapter = new DAL.CadastroDataSetTableAdapters.ProductTableAdapter();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cadastroDataSet)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -217,6 +217,7 @@ namespace SystemQuiche
             this.txtPreco.ReadOnly = true;
             this.txtPreco.Size = new System.Drawing.Size(89, 24);
             this.txtPreco.TabIndex = 3;
+            this.txtPreco.TextChanged += new System.EventHandler(this.txtPreco_TextChanged);
             // 
             // label7
             // 
@@ -249,15 +250,21 @@ namespace SystemQuiche
             // 
             this.cmbNomeProduto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbNomeProduto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbNomeProduto.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productBindingSource, "ProductID", true));
             this.cmbNomeProduto.DataSource = this.productBindingSource;
-            this.cmbNomeProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNomeProduto.DisplayMember = "ProductName";
+            this.cmbNomeProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNomeProduto.FormattingEnabled = true;
             this.cmbNomeProduto.Location = new System.Drawing.Point(138, 25);
             this.cmbNomeProduto.Name = "cmbNomeProduto";
             this.cmbNomeProduto.Size = new System.Drawing.Size(401, 25);
             this.cmbNomeProduto.TabIndex = 0;
             this.cmbNomeProduto.ValueMember = "ProductID";
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataMember = "Product";
+            this.productBindingSource.DataSource = this.cadastroDataSet;
             // 
             // cadastroDataSet
             // 
@@ -358,6 +365,7 @@ namespace SystemQuiche
             this.btnDeletar.TabIndex = 3;
             this.btnDeletar.Text = "&Deletar";
             this.btnDeletar.UseVisualStyleBackColor = true;
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
             // btnSalvar
             // 
@@ -367,6 +375,7 @@ namespace SystemQuiche
             this.btnSalvar.TabIndex = 1;
             this.btnSalvar.Text = "&Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnNovo
             // 
@@ -400,10 +409,10 @@ namespace SystemQuiche
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txtTotalPago);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.txtValorDevido);
-            this.panel2.Controls.Add(this.txtTotalPago);
             this.panel2.Controls.Add(this.txtTotal);
             this.panel2.Controls.Add(this.txtDescontoAmount);
             this.panel2.Controls.Add(this.txtDescontoPer);
@@ -421,6 +430,14 @@ namespace SystemQuiche
             this.panel2.Size = new System.Drawing.Size(315, 221);
             this.panel2.TabIndex = 109;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // txtTotalPago
+            // 
+            this.txtTotalPago.Enabled = false;
+            this.txtTotalPago.Location = new System.Drawing.Point(116, 151);
+            this.txtTotalPago.Name = "txtTotalPago";
+            this.txtTotalPago.Size = new System.Drawing.Size(81, 24);
+            this.txtTotalPago.TabIndex = 102;
             // 
             // label16
             // 
@@ -447,6 +464,7 @@ namespace SystemQuiche
             // txtValorDevido
             // 
             this.txtValorDevido.BackColor = System.Drawing.Color.White;
+            this.txtValorDevido.Enabled = false;
             this.txtValorDevido.Location = new System.Drawing.Point(116, 183);
             this.txtValorDevido.Name = "txtValorDevido";
             this.txtValorDevido.ReadOnly = true;
@@ -454,22 +472,10 @@ namespace SystemQuiche
             this.txtValorDevido.TabIndex = 8;
             this.txtValorDevido.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // txtTotalPago
-            // 
-            this.txtTotalPago.BackColor = System.Drawing.Color.White;
-            this.txtTotalPago.Location = new System.Drawing.Point(116, 150);
-            this.txtTotalPago.Name = "txtTotalPago";
-            this.txtTotalPago.ReadOnly = true;
-            this.txtTotalPago.Size = new System.Drawing.Size(81, 24);
-            this.txtTotalPago.TabIndex = 2;
-            this.txtTotalPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtTotalPago.TextChanged += new System.EventHandler(this.txtTotalPago_TextChanged);
-            this.txtTotalPago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTotalPago_KeyPress);
-            this.txtTotalPago.Validating += new System.ComponentModel.CancelEventHandler(this.txtTotalPago_Validating);
-            // 
             // txtTotal
             // 
             this.txtTotal.BackColor = System.Drawing.Color.White;
+            this.txtTotal.Enabled = false;
             this.txtTotal.Location = new System.Drawing.Point(116, 117);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
@@ -480,6 +486,7 @@ namespace SystemQuiche
             // txtDescontoAmount
             // 
             this.txtDescontoAmount.BackColor = System.Drawing.Color.White;
+            this.txtDescontoAmount.Enabled = false;
             this.txtDescontoAmount.Location = new System.Drawing.Point(220, 82);
             this.txtDescontoAmount.Name = "txtDescontoAmount";
             this.txtDescontoAmount.ReadOnly = true;
@@ -490,6 +497,7 @@ namespace SystemQuiche
             // txtDescontoPer
             // 
             this.txtDescontoPer.BackColor = System.Drawing.Color.White;
+            this.txtDescontoPer.Enabled = false;
             this.txtDescontoPer.Location = new System.Drawing.Point(116, 83);
             this.txtDescontoPer.Name = "txtDescontoPer";
             this.txtDescontoPer.Size = new System.Drawing.Size(52, 24);
@@ -500,6 +508,7 @@ namespace SystemQuiche
             // txtTaxAmt
             // 
             this.txtTaxAmt.BackColor = System.Drawing.Color.White;
+            this.txtTaxAmt.Enabled = false;
             this.txtTaxAmt.Location = new System.Drawing.Point(220, 47);
             this.txtTaxAmt.Name = "txtTaxAmt";
             this.txtTaxAmt.ReadOnly = true;
@@ -510,6 +519,7 @@ namespace SystemQuiche
             // txtTaxPer
             // 
             this.txtTaxPer.BackColor = System.Drawing.Color.White;
+            this.txtTaxPer.Enabled = false;
             this.txtTaxPer.Location = new System.Drawing.Point(116, 48);
             this.txtTaxPer.Name = "txtTaxPer";
             this.txtTaxPer.Size = new System.Drawing.Size(52, 24);
@@ -521,11 +531,13 @@ namespace SystemQuiche
             // txtSubTotal
             // 
             this.txtSubTotal.BackColor = System.Drawing.Color.White;
+            this.txtSubTotal.Enabled = false;
             this.txtSubTotal.Location = new System.Drawing.Point(116, 14);
             this.txtSubTotal.Name = "txtSubTotal";
             this.txtSubTotal.ReadOnly = true;
             this.txtSubTotal.Size = new System.Drawing.Size(184, 24);
             this.txtSubTotal.TabIndex = 5;
+            this.txtSubTotal.TextChanged += new System.EventHandler(this.txtSubTotal_TextChanged);
             // 
             // label14
             // 
@@ -613,11 +625,6 @@ namespace SystemQuiche
             // 
             this.productTableAdapter.ClearBeforeFill = true;
             // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataMember = "Product";
-            this.productBindingSource.DataSource = this.cadastroDataSet;
-            // 
             // frmVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -649,11 +656,11 @@ namespace SystemQuiche
             this.Load += new System.EventHandler(this.frmVendas_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cadastroDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -703,7 +710,6 @@ namespace SystemQuiche
         internal System.Windows.Forms.Label label16;
         internal System.Windows.Forms.Label label15;
         internal System.Windows.Forms.TextBox txtValorDevido;
-        internal System.Windows.Forms.TextBox txtTotalPago;
         internal System.Windows.Forms.TextBox txtTotal;
         internal System.Windows.Forms.TextBox txtDescontoAmount;
         internal System.Windows.Forms.TextBox txtDescontoPer;
@@ -715,5 +721,6 @@ namespace SystemQuiche
         private DAL.CadastroDataSet cadastroDataSet;
         private DAL.CadastroDataSetTableAdapters.ProductTableAdapter productTableAdapter;
         private System.Windows.Forms.BindingSource productBindingSource;
+        private System.Windows.Forms.TextBox txtTotalPago;
     }
 }

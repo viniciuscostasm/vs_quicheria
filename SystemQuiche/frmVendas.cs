@@ -9,62 +9,54 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
+using BLL;
 
-namespace SystemQuiche{
+namespace SystemQuiche
+{
     public partial class frmVendas : Form
     {
         public frmVendas()
         {
             InitializeComponent();
+           
         }
-
-        private void auto()
-        {
-            txtNumPedido.Text = "OD-" + GetUniquekey(8);
-        }
-
-        public static string GetUniquekey(int maxSize)
-        {
-            char[] chars = new char[62];
-            chars = "123456789".ToCharArray();
-            byte[] data = new byte[1];
-            RNGCryptoServiceProvider crypto = new RNGCryptoServiceProvider();
-            crypto.GetNonZeroBytes(data);
-            data = new byte[maxSize];
-            crypto.GetNonZeroBytes(data);
-            StringBuilder result = new StringBuilder(maxSize);
-            foreach (byte b in data)
-            {
-                result.Append(chars[b % (chars.Length)]);
-            }
-            return result.ToString();
-        }
-
-
+        ProductBLL pd = new ProductBLL();
+        ProductSoldBLL ps;
+        Invoice_InfoBLL invoice;
+        
+        double soma = 0;
         public void Calcular()
         {
             if (txtTaxPer.Text != "")
             {
-                txtTaxAmt.Text = Convert.ToInt32((Convert.ToInt32(txtSubTotal.Text) * Convert.ToDouble(txtTaxPer.Text) / 100)).ToString();
+                txtTaxAmt.Text = Convert.ToDouble((Convert.ToDouble(txtSubTotal.Text) * Convert.ToDouble(txtTaxPer.Text) / 100)).ToString();
+            }
+            else
+            {
+                txtTaxAmt.Text = "0";
             }
             if (txtDescontoPer.Text != "")
             {
-                txtDescontoAmount.Text = Convert.ToInt32(((Convert.ToInt32(txtSubTotal.Text) + Convert.ToInt32(txtTaxAmt.Text)) * Convert.ToDouble(txtDescontoPer.Text) / 100)).ToString();
+                txtDescontoAmount.Text = Convert.ToDouble(((Convert.ToDouble(txtSubTotal.Text) + Convert.ToDouble(txtTaxAmt.Text)) * Convert.ToDouble(txtDescontoPer.Text) / 100)).ToString();
             }
-            int val1 = 0;
-            int val2 = 0;
-            int val3 = 0;
-            int val4 = 0;
-            int val5 = 0;
-            int.TryParse(txtTaxAmt.Text, out val1);
-            int.TryParse(txtSubTotal.Text, out val2);
-            int.TryParse(txtDescontoAmount.Text, out val3);
-            int.TryParse(txtTotal.Text, out val4);
-            int.TryParse(txtTotalPago.Text, out val5);
+            else
+            {
+                txtDescontoAmount.Text = "0";
+            }
+            double val1;
+            double val2;
+            double val3;
+            double val4;
+            double val5;
+            double.TryParse(txtTaxAmt.Text, out val1);
+            double.TryParse(txtSubTotal.Text, out val2);
+            double.TryParse(txtDescontoAmount.Text, out val3);
+            double.TryParse(txtTotal.Text, out val4);
+            double.TryParse(txtTotalPago.Text, out val5);
             val4 = val1 + val2 - val3;
-            txtTotal.Text = val4.ToString();
-            int I = (val4 - val5);
-            txtValorDevido.Text = I.ToString();
+            txtTotal.Text = val4.ToString("N2");
+            double I = (val5 - val4);
+            txtValorDevido.Text = I.ToString("N2");
         }
 
 
@@ -77,85 +69,68 @@ namespace SystemQuiche{
         {
             // TODO: This line of code loads data into the 'cadastroDataSet.Product' table. You can move, or remove it, as needed.
             this.productTableAdapter.Fill(this.cadastroDataSet.Product);
-
+           
         }
 
         private void txtQtdVenda_TextChanged(object sender, EventArgs e)
         {
             int val1 = 0;
             int val2 = 0;
-            int.TryParse(txtPreco.Text, out val1);
+            var produto = pd.Localizar(Convert.ToInt32(cmbNomeProduto.SelectedValue));
+            int.TryParse(produto.Price.ToString(), out val1);
             int.TryParse(txtQtdVenda.Text, out val2);
             int I = (val1 * val2);
             txtValorTotal.Text = I.ToString();
-        }
-
-        public double subtotal()
-        {
-            int i = 0;
-            int j = 0;
-            int k = 0;
-            i = 0;
-            j = 0;
-            k = 0;
-
-            try
-            {
-                j = listView1.Items.Count;
-                for (i = 0; i <= j - 1; i++)
-                {
-                    k = k + Convert.ToInt32(listView1.Items[i].SubItems[5].Text);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return k;
+            txtPreco.Text = produto.Price.ToString();
         }
 
         private void btnIncluirCarrinho_Click(object sender, EventArgs e)
         {
-            try
+
+            txtTaxPer.Enabled = true;
+            txtDescontoAmount.Enabled = true;
+            txtDescontoPer.Enabled = true;
+            txtSubTotal.Enabled = true;
+            txtTaxAmt.Enabled = true;
+            txtTotalPago.Enabled = true;
+            txtValorDevido.Enabled = true;
+            txtTotal.Enabled = true;
+            try//
             {
                 if (cmbNomeProduto.Text == "")
                 {
-                    MessageBox.Show("Selecione o nome do produto", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Selecione o nome do produto", "Erro2", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 if (txtQtdVenda.Text == "")
                 {
-                    MessageBox.Show("Informe a quantidade", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Informe a quantidade", "Erro3", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtQtdVenda.Focus();
                     return;
                 }
                 int QtdVenda = Convert.ToInt32(txtQtdVenda.Text);
                 if (QtdVenda == 0)
                 {
-                    MessageBox.Show("Quantidade não pode ser zero", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Quantidade não pode ser zero", "Erro4", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtQtdVenda.Focus();
                     return;
                 }
 
-                if (listView1.Items.Count == 0)
-                {
-                    ListViewItem lst = new ListViewItem();
-                    lst.SubItems.Add(txtProdutoID.Text);
-                    lst.SubItems.Add(cmbNomeProduto.Text);
-                    lst.SubItems.Add(txtPreco.Text);
-                    lst.SubItems.Add(txtQtdVenda.Text);
-                    lst.SubItems.Add(txtValorTotal.Text);
-                    listView1.Items.Add(lst);
-                    txtSubTotal.Text = subtotal().ToString();
-
-                    Calcular();
-                    cmbNomeProduto.Text = "";
-                    txtProdutoID.Text = "";
-                    txtPreco.Text = "";
-                    txtQtdVenda.Text = "";
-                    txtValorTotal.Text = "";
-                    return;
-                }
+                var produto = pd.Localizar(Convert.ToInt32(cmbNomeProduto.SelectedValue));
+                ListViewItem lst = new ListViewItem();
+                lst.SubItems.Add(produto.ProductID.ToString());
+                lst.SubItems.Add(produto.ProductName);
+                lst.SubItems.Add(produto.Price.ToString("N2"));
+                lst.SubItems.Add(txtQtdVenda.Text);
+                lst.SubItems.Add(txtValorTotal.Text.ToString());
+                listView1.Items.Add(lst);
+                soma += (Convert.ToDouble(produto.Price) * Convert.ToDouble(txtQtdVenda.Text));
+                txtSubTotal.Text = soma.ToString("N2");
+                cmbNomeProduto.Text = "";
+                txtProdutoID.Text = "";
+                txtPreco.Text = "";
+                txtQtdVenda.Text = "";
+                txtValorTotal.Text = "";
 
                 for (int j = 0; j <= listView1.Items.Count - 1; j++)
                 {
@@ -165,15 +140,15 @@ namespace SystemQuiche{
                         listView1.Items[j].SubItems[2].Text = cmbNomeProduto.Text;
                         listView1.Items[j].SubItems[3].Text = txtPreco.Text;
                         listView1.Items[j].SubItems[4].Text = (Convert.ToInt32(listView1.Items[j].SubItems[4].Text) + Convert.ToInt32(txtQtdVenda.Text)).ToString();
-                        listView1.Items[j].SubItems[5].Text = (Convert.ToInt32(listView1.Items[j].SubItems[5].Text) + Convert.ToInt32(txtValorTotal.Text)).ToString();
-                        txtSubTotal.Text = subtotal().ToString();
-                        Calcular();
+                        listView1.Items[j].SubItems[5].Text = (Convert.ToDouble(listView1.Items[j].SubItems[5].Text) + Convert.ToDouble(txtValorTotal.Text)).ToString();
+                        soma += produto.Price;
+                        txtSubTotal.Text = soma.ToString("N2");
+                        
                         cmbNomeProduto.Text = "";
                         txtProdutoID.Text = "";
                         txtPreco.Text = "";
                         txtQtdVenda.Text = "";
                         txtValorTotal.Text = "";
-                        return;
 
                     }
                 }
@@ -186,18 +161,18 @@ namespace SystemQuiche{
                 lst1.SubItems.Add(txtQtdVenda.Text);
                 lst1.SubItems.Add(txtValorTotal.Text);
                 listView1.Items.Add(lst1);
-                txtSubTotal.Text = subtotal().ToString();
-                Calcular();
+
                 cmbNomeProduto.Text = "";
                 txtProdutoID.Text = "";
                 txtPreco.Text = "";
                 txtQtdVenda.Text = "";
                 txtValorTotal.Text = "";
-                return;
+               
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error5", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -205,6 +180,7 @@ namespace SystemQuiche{
         {
             try
             {
+                Program.Moeda(ref txtTaxPer);
                 if (string.IsNullOrEmpty(txtTaxPer.Text))
                 {
                     txtTaxAmt.Text = "";
@@ -215,7 +191,7 @@ namespace SystemQuiche{
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error6", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -253,40 +229,21 @@ namespace SystemQuiche{
             btnPrint.Enabled = false;
             listView1.Enabled = true;
             btnIncluirCarrinho.Enabled = true;
-
+                        
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
             Reset();
-            Reset();
         }
 
         private void txtTotalPago_TextChanged(object sender, EventArgs e)
         {
-            int val1 = 0;
-            int val2 = 0;
-            int.TryParse(txtTotal.Text, out val1);
-            int.TryParse(txtTotalPago.Text, out val2);
-            int I = (val1 - val2);
-            txtValorDevido.Text = I.ToString();
+            Program.Moeda(ref txtTotalPago);
+            txtValorDevido.Text = (Convert.ToDouble(txtTotalPago.Text) - Convert.ToDouble(txtValorTotal.Text)).ToString();
+
         }
 
-        private void txtTotalPago_Validating(object sender, CancelEventArgs e)
-        {
-            int val1 = 0;
-            int val2 = 0;
-            int.TryParse(txtTotal.Text, out val1);
-            int.TryParse(txtTotalPago.Text, out val2);
-            if (val2 > val1)
-            {
-                MessageBox.Show("Valor Pago não pode ser maior que o valor total", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtTotalPago.Text = "";
-                txtValorDevido.Text = "";
-                txtTotalPago.Focus();
-                return;
-            }
-        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -345,9 +302,70 @@ namespace SystemQuiche{
 
         private void txtDescontoPer_TextChanged(object sender, EventArgs e)
         {
+            Program.Moeda(ref txtDescontoPer);
             Calcular();
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            ps = new ProductSoldBLL();
+            invoice = new Invoice_InfoBLL();
+            var InvoiceNo = "OD- " + (DateTime.Now.Ticks / 10000000).ToString();
+            if (txtTaxPer.Text == "")
+                txtTaxPer.Text = Convert.ToDouble("0").ToString();
+            if (txtDescontoPer.Text == "")
+                txtDescontoPer.Text = Convert.ToDouble("0").ToString();
+            if (txtTotalPago.Text == "")
+                txtTotalPago.Text = Convert.ToDouble("0").ToString();
+            var msg = invoice.AdicionarInvoice_Info(InvoiceNo,
+                                                    DateTime.Now.ToString("d"),
+                                                    Convert.ToDouble(txtSubTotal.Text),
+                                                    Convert.ToDouble(txtTaxPer.Text),
+                                                    Convert.ToDouble(txtTaxAmt.Text),
+                                                    Convert.ToDouble(txtDescontoPer.Text),
+                                                    Convert.ToDouble(txtDescontoAmount.Text),
+                                                    Convert.ToDouble(txtTotal.Text),
+                                                    Convert.ToDouble(txtTotalPago.Text),
+                                                    Convert.ToDouble(txtValorDevido.Text),
+                                                    txtObservacoes.Text);
+            MessageBox.Show(msg, listView1.Items[0].SubItems[2].Text,
+                  MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            var x = invoice.LocalizarPorNumero(InvoiceNo);
+
+            for (int j = 0; j <= listView1.Items.Count - 1; j++)
+            {
+                ps.AdicionarProductSold(x.InvoiceNo,
+                Convert.ToInt32(listView1.Items[j].SubItems[1].Text),
+                listView1.Items[j].SubItems[2].Text,
+                Convert.ToDouble(listView1.Items[j].SubItems[3].Text),
+                Convert.ToInt32(listView1.Items[j].SubItems[4].Text),
+                Convert.ToDouble(listView1.Items[j].SubItems[5].Text));
+            }
+
+        }
+
+        private string CalcularTxtValorTotal()
+        {
+            return txtValorTotal.Text = (Convert.ToDouble(txtQtdVenda.Text) * Convert.ToDouble(txtPreco.Text)).ToString("N2");
+        }
+
+        private void txtPreco_TextChanged(object sender, EventArgs e)
+        {
+
+            txtValorTotal.Text = CalcularTxtValorTotal();
+        }
+
+        private void txtSubTotal_TextChanged(object sender, EventArgs e)
+        {
+            Program.Moeda(ref txtSubTotal);
+            txtTotal.Text = txtSubTotal.Text;
+        }
+
+        private void btnDeletar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
 
-       
+

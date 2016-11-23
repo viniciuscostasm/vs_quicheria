@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5EB5AB4A-F99E-4ED6-A7AA-2997A72C675E}</ProjectGuid>
+    <ProjectGuid>{EAE28D06-DC80-4074-B577-CA42D8337219}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Model</RootNamespace>
@@ -41,6 +41,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,9 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cadastro.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Cadastro.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Category.cs">
       <DependentUpon>Cadastro.tt</DependentUpon>
@@ -78,17 +80,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Cadastro.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Cadastro.cs</LastGenOutput>
-    </Content>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <Content Include="Cadastro.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Cadastro.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

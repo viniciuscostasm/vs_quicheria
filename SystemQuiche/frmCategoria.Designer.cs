@@ -166,7 +166,7 @@
         }
 
         #endregion
-
+        
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.TextBox txtNomeCategoria;
         public System.Windows.Forms.TextBox txtID;

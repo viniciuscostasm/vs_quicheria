@@ -11,7 +11,7 @@ namespace BLL
     public class Invoice_InfoBLL
     {
         IInvoice_InfoRepositorio _invoice_InfoRepositorio;
-
+        Invoice_Info inv;
         public Invoice_InfoBLL()
         {
             try
@@ -44,16 +44,41 @@ namespace BLL
                 throw ex;
             }
         }
-        public void AdicionarInvoice_Info(Invoice_Info inv)
+        
+        public string AdicionarInvoice_Info(string InvoiceNo, 
+                                            string InvoiceDate, 
+                                            double SubTotal,
+                                            double VATPer,
+                                            double VATAmount,
+                                            double DiscountPer,
+                                            double DiscountAmount,
+                                            double GrandTotal,
+                                            double TotalPayment,
+                                            double PaymentDue,
+                                            string Remarks)
         {
+            inv = new Invoice_Info();
+            inv.InvoiceNo = InvoiceNo;
+            inv.InvoiceDate = InvoiceDate;
+            inv.SubTotal = SubTotal;
+            inv.VATPer = VATPer;
+            inv.VATAmount = VATAmount;
+            inv.DiscountPer = DiscountPer;
+            inv.DiscountAmount = DiscountAmount;
+            inv.GrandTotal = GrandTotal;
+            inv.TotalPayment = TotalPayment;
+            inv.PaymentDue = PaymentDue;
+            inv.Remarks = Remarks;
+            
             try
             {
                 _invoice_InfoRepositorio.Adicionar(inv);
                 _invoice_InfoRepositorio.Commit();
+                return "Sucesso";
             }
             catch (Exception ex)
             {
-                throw ex;
+                return ex.Message;
             }
         }
         public Invoice_Info Localizar(int id)
@@ -66,6 +91,10 @@ namespace BLL
             {
                 throw ex;
             }
+        }
+        public Invoice_Info LocalizarPorNumero(string InvoiceNo)
+        {
+            return _invoice_InfoRepositorio.Get(i => i.InvoiceNo == InvoiceNo).SingleOrDefault();
         }
 
         public void ExcluirCategoria(Invoice_Info inv)

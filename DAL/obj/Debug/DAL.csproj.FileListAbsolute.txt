@@ -22,3 +22,15 @@ E:\Quicheria\DAL\bin\Debug\EntityFramework.SqlServer.xml
 E:\Quicheria\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 E:\Quicheria\DAL\obj\Debug\DAL.dll
 E:\Quicheria\DAL\obj\Debug\DAL.pdb
+E:\Studio 2012\DAL\bin\Debug\DAL.dll.config
+E:\Studio 2012\DAL\bin\Debug\DAL.dll
+E:\Studio 2012\DAL\bin\Debug\DAL.pdb
+E:\Studio 2012\DAL\bin\Debug\EntityFramework.dll
+E:\Studio 2012\DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\Studio 2012\DAL\bin\Debug\Model.dll
+E:\Studio 2012\DAL\bin\Debug\Model.pdb
+E:\Studio 2012\DAL\bin\Debug\EntityFramework.xml
+E:\Studio 2012\DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\Studio 2012\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\Studio 2012\DAL\obj\Debug\DAL.dll
+E:\Studio 2012\DAL\obj\Debug\DAL.pdb

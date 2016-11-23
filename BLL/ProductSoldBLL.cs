@@ -11,6 +11,7 @@ namespace BLL
     public class ProductSoldBLL
     {
         IProductSoldRepositorio _productSoldRepositorio;
+        ProductSold pds;
 
         public ProductSoldBLL()
         {
@@ -44,16 +45,24 @@ namespace BLL
                 throw ex;
             }
         }
-        public void AdicionarProductSold(ProductSold pds)
+        public string AdicionarProductSold(string invoiceNo, int pID, string pNome, double preco, int qntd, double valor)
         {
             try
             {
+                pds = new ProductSold();
+                pds.InvoiceNo = invoiceNo;
+                pds.ProductID = pID;
+                pds.ProductName = pNome;
+                pds.Price = preco;
+                pds.Quantity = qntd;
+                pds.TotalAmount = valor;
                 _productSoldRepositorio.Adicionar(pds);
                 _productSoldRepositorio.Commit();
+                return "Compra efetuada com sucesso!";
             }
             catch (Exception ex)
             {
-                throw ex;
+                return ex.Message;
             }
         }
         public ProductSold Localizar(int id)
@@ -61,6 +70,17 @@ namespace BLL
             try
             {
                 return _productSoldRepositorio.Find(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public ProductSold LocalizarPorNome(string nm)
+        {
+            try
+            {
+                return _productSoldRepositorio.Find(nm);
             }
             catch (Exception ex)
             {

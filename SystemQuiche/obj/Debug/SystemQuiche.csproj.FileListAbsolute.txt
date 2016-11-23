@@ -247,3 +247,41 @@ E:\Quicheria\SystemQuiche\obj\Debug\SystemQuiche.frmVendas.resources
 E:\Quicheria\SystemQuiche\obj\Debug\SystemQuiche.frmVendasRecord.resources
 E:\Quicheria\SystemQuiche\obj\Debug\SystemQuiche.frmVendasReport.resources
 E:\Quicheria\SystemQuiche\obj\Debug\SystemQuiche.MDIPrincipal.resources
+E:\Studio 2012\SystemQuiche\bin\Debug\SystemQuiche.exe.config
+E:\Studio 2012\SystemQuiche\obj\Debug\SystemQuiche.exe
+E:\Studio 2012\SystemQuiche\obj\Debug\SystemQuiche.pdb
+E:\Studio 2012\SystemQuiche\obj\Debug\SystemQuiche.csprojResolveAssemblyReference.cache
+E:\Studio 2012\SystemQuiche\obj\Debug\SystemQuiche.frmAlterarSenha.resources
+E:\Studio 2012\SystemQuiche\obj\Debug\SystemQuiche.frmCadastroUsuario.resources
+E:\Studio 2012\SystemQuiche\obj\Debug\SystemQuiche.frmCategoria.resources
+E:\Studio 2012\SystemQuiche\obj\Debug\SystemQuiche.frmCategoriaRecord.resources
+E:\Studio 2012\SystemQuiche\obj\Debug\SystemQuiche.frmClientes.resources
+E:\Studio 2012\SystemQuiche\obj\Debug\SystemQuiche.frmClientesRecord.resources
+E:\Studio 2012\SystemQuiche\obj\Debug\SystemQuiche.frmClientesReport.resources
+E:\Studio 2012\SystemQuiche\obj\Debug\SystemQuiche.frmFaturaReport.resources
+E:\Studio 2012\SystemQuiche\obj\Debug\SystemQuiche.frmLogin.resources
+E:\Studio 2012\SystemQuiche\obj\Debug\SystemQuiche.frmLoginDetalhes.resources
+E:\Studio 2012\SystemQuiche\obj\Debug\SystemQuiche.frmProdutos.resources
+E:\Studio 2012\SystemQuiche\obj\Debug\SystemQuiche.frmProdutosRecord.resources
+E:\Studio 2012\SystemQuiche\obj\Debug\SystemQuiche.frmRecuperarSenha.resources
+E:\Studio 2012\SystemQuiche\obj\Debug\SystemQuiche.frmRegistroUsuariosDetalhes.resources
+E:\Studio 2012\SystemQuiche\obj\Debug\SystemQuiche.frmSobre.resources
+E:\Studio 2012\SystemQuiche\obj\Debug\SystemQuiche.frmSplash.resources
+E:\Studio 2012\SystemQuiche\obj\Debug\SystemQuiche.frmVendas.resources
+E:\Studio 2012\SystemQuiche\obj\Debug\SystemQuiche.frmVendasRecord.resources
+E:\Studio 2012\SystemQuiche\obj\Debug\SystemQuiche.frmVendasReport.resources
+E:\Studio 2012\SystemQuiche\obj\Debug\SystemQuiche.MDIPrincipal.resources
+E:\Studio 2012\SystemQuiche\obj\Debug\SystemQuiche.Properties.Resources.resources
+E:\Studio 2012\SystemQuiche\obj\Debug\SystemQuiche.csproj.GenerateResource.Cache
+E:\Studio 2012\SystemQuiche\bin\Debug\SystemQuiche.exe
+E:\Studio 2012\SystemQuiche\bin\Debug\SystemQuiche.pdb
+E:\Studio 2012\SystemQuiche\bin\Debug\BLL.dll
+E:\Studio 2012\SystemQuiche\bin\Debug\DAL.dll
+E:\Studio 2012\SystemQuiche\bin\Debug\EntityFramework.dll
+E:\Studio 2012\SystemQuiche\bin\Debug\EntityFramework.SqlServer.dll
+E:\Studio 2012\SystemQuiche\bin\Debug\Model.dll
+E:\Studio 2012\SystemQuiche\bin\Debug\BLL.pdb
+E:\Studio 2012\SystemQuiche\bin\Debug\DAL.pdb
+E:\Studio 2012\SystemQuiche\bin\Debug\Model.pdb
+E:\Studio 2012\SystemQuiche\bin\Debug\EntityFramework.xml
+E:\Studio 2012\SystemQuiche\bin\Debug\EntityFramework.SqlServer.xml
